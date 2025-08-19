@@ -1,0 +1,152 @@
+#root {
+  margin: 0;
+  padding: 0;      /* ne szűkítsen */
+  text-align: initial;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}A
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  background: rgba(20, 22, 28, 0.55);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(2px);
+  transition: transform .16s ease, border-color .16s ease, background .16s ease;
+
+  width: 100%;      /* <-- TELJES szélesség az oszlopon belül */
+  margin: 0;        /* középre igazítást ne erőltesse */
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* Teljes oldal háttér + enyhe blur */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  background: url("/bg.png") center/cover no-repeat;
+  filter: blur(6px) saturate(108%);
+  transform: scale(1.04); /* hogy a blur ne vágja le a széleket */
+  z-index: -2;
+}
+
+/* Finom sötét overlay a jobb kontrasztért */
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(closest-side, rgba(0,0,0,0.12), rgba(0,0,0,0.35));
+  z-index: -1;
+}
+
+/* Alap layout */
+.page {
+  min-height: 100dvh;
+  color: #f5f7fa;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+/* Fejléc */
+.header {
+  padding: 32px 24px 12px;
+  text-align: center;
+}
+.header h1 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: .5px;
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+
+
+/* Kártya stílus */
+.card {
+  background: rgba(20, 22, 28, 0.55);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 18px;
+  backdrop-filter: blur(2px);
+  transition: transform .16s ease, border-color .16s ease, background .16s ease;
+
+  width: 60%;        /* <-- itt állítod be a szélességet */
+  margin: 0 auto;    /* <-- középre hozza a kártyát */
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.18);
+  background: rgba(20, 22, 28, 0.65);
+}
+.card h3 {
+  margin: 2px 0 8px;
+  font-size: 18px;
+}
+.card p {
+  margin: 0 0 14px;
+  color: #d4d8dd;
+  line-height: 1.4;
+  font-size: 14px;
+}
+.card a {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: #fff;
+}
+.card a:hover {
+  border-color: rgba(255,255,255,.45);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: 100px 1fr; /* bal oldalt fix 50px, jobb oldalt tartalom */
+  gap: 1rem;
+  align-items: center;
+}
+
+.card-image {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 8px; /* ha kör alak kellene: 50% */
+  flex-shrink: 0;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
