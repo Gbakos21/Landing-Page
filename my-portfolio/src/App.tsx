@@ -28,7 +28,7 @@ const App: React.FC = () => {
           <ProjectCard
             title="Smurf village"
             description="Egy full-stack miniapp, amely Törpök (Smurfs) adatait jeleníti meg áttekintő statisztikákkal, listákkal és részletes nézetekkel. A frontend React + TypeScript alapú, Material UI-val, MUI X charttal és React Routerrel; reszponzív felület és dark mode kapcsoló is van (Tabs/dropdown, téma-váltás). Backend / API: ASP.NET Core Web API, /stat útvonal alatt végpontokkal adja vissza az entitásokat. Az API projekciókkal adja vissza a kapcsolt azonosítókat, amelyeket a kliens oldali hook összefűz."
-            href="https://gbakos.hu"
+            href="https://smurf.gbakos.hu"
             image="/smurf.svg" // ide saját kép
           />
           <ProjectCard
@@ -42,20 +42,20 @@ A nyelvi modell lokálisan LM Studio-n fut.
 A backend C#-ban készül (pl. Job.cs, AnalyzedComment.cs), WebSocket-tel és Swaggerrel dokumentált API-kkal. 
 
 A frontend React/TypeScript alapú (pl. App.tsx), kontextus-kezeléssel, bejelentkezés/registráció és főoldal nézetekkel; a fő funkciók a Reddit-posztok kiértékelése és statisztikák."
-            href="https://példa.hu/projekt-b"
+            href="https://analyzer.gbakos.hu"
             image="/reddit_analyzer.png"
           />
           <ProjectCard
             title="Weather App"
             description="Ez egy modern, reszponzív időjárás-app, amivel városnév alapján vagy a böngésző geolokációját használva lekérheted az aktuális időjárást. Az OpenWeather adataira épít, üveg-hatású (glass) felületet és dinamikus színátmenetet használ az időjárás típusához igazítva, saját SVG logóval és favikonnal. Technológiák: HTML5 + CSS (modern), Bootstrap 5, Bootstrap Icons, Vanilla JavaScript (fetch + Geolocation API), OpenWeather API, SVG logó és favicon"
-            href="https://github.com/felhasznalonev"
+            href="https://weather.gbakos.hu"
             image="/weather-logo-icon.svg"
           />
           <ProjectCard
-            title="GitHub"
+            title="playlist"
             description="Kódok, demók és issue-k."
-            href="https://github.com/felhasznalonev"
-            image="https://via.placeholder.com/300"
+            href="https://playlist.gbakos.hu"
+            image="/playlist.svg"
           />
         </Box>
       </Container>
