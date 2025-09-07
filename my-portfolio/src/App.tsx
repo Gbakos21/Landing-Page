@@ -57,6 +57,12 @@ A frontend React/TypeScript alapú (pl. App.tsx), kontextus-kezeléssel, bejelen
             href="https://playlist.gbakos.hu"
             image="/playlist.svg"
           />
+          <ProjectCard
+            title="Zorka"
+            description="Doggy games"
+            href="https://zorka.gbakos.hu"
+            image="/doggo.svg"
+          />
         </Box>
       </Container>
     </div>
