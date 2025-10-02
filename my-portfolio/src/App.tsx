@@ -63,6 +63,12 @@ A frontend React/TypeScript alapú (pl. App.tsx), kontextus-kezeléssel, bejelen
             href="https://zorka.gbakos.hu"
             image="/doggo.svg"
           />
+          <ProjectCard
+            title="Feladatkezelő"
+            description="BME Projektmunka a Design a szoftverfejlesztésben című tárgyhoz"
+            href="https://feladatkezelo.gbakos.hu/"
+            image="/feladatkezelo.svg"
+          />
         </Box>
       </Container>
     </div>
