@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import smoothScrollToId from "../utils/smoothScrollTo";
+import { useI18n } from "../i18n/I18nProvider";
+import type { Language } from "../i18n/translations";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("portfolio");
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isLightMode, setIsLightMode] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const { language, setLanguage, t } = useI18n();
 
   useEffect(() => {
     const onScroll = () => {
@@ -69,6 +73,9 @@ const Navbar: React.FC = () => {
     smoothScrollToId(id, 900);
   };
 
+  const currentFlag =
+    language === "hu" ? "flag-hu" : language === "de" ? "flag-de" : "flag-en";
+
   return (
     <header className="site-header">
       <nav className={`nav${isScrolled ? " is-solid" : ""}${isMobileOpen ? " is-open" : ""}`}>
@@ -82,14 +89,14 @@ const Navbar: React.FC = () => {
             className={activeSection === "portfolio" ? "is-active" : undefined}
             onClick={(event) => handleNavClick(event, "portfolio")}
           >
-            Portfolio
+            {t("navPortfolio")}
           </a>
           <a
             href="#projektek"
             className={activeSection === "projektek" ? "is-active" : undefined}
             onClick={(event) => handleNavClick(event, "projektek")}
           >
-            Projektek
+            {t("navProjects")}
           </a>
           <button
             className="nav-toggle"
@@ -115,26 +122,66 @@ const Navbar: React.FC = () => {
             <span className="theme-icon sun" aria-hidden="true" />
             <span className="theme-icon moon" aria-hidden="true" />
           </button>
-          <div className="lang-select">
-            <button className="lang-button" type="button" aria-haspopup="listbox">
-              <span className="flag flag-hu" aria-hidden="true" />
-              Magyar
+          <div
+            className={`lang-select${isLangOpen ? " is-open" : ""}`}
+            onMouseLeave={() => setIsLangOpen(false)}
+          >
+            <button
+              className="lang-button"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded={isLangOpen}
+              onClick={() => setIsLangOpen((prev) => !prev)}
+            >
+              <span className={`flag ${currentFlag}`} aria-hidden="true" />
+              {language === "hu"
+                ? t("navLanguageHu")
+                : language === "en"
+                ? t("navLanguageEn")
+                : t("navLanguageDe")}
               <span className="chev" aria-hidden="true">
                 v
               </span>
             </button>
             <div className="lang-menu" role="listbox">
-              <button className="lang-item" type="button" role="option">
+              <button
+                className="lang-item"
+                type="button"
+                role="option"
+                aria-selected={language === "hu"}
+                onClick={() => {
+                  setLanguage("hu" as Language);
+                  setIsLangOpen(false);
+                }}
+              >
                 <span className="flag flag-hu" aria-hidden="true" />
-                Magyar
+                {t("navLanguageHu")}
               </button>
-              <button className="lang-item" type="button" role="option">
+              <button
+                className="lang-item"
+                type="button"
+                role="option"
+                aria-selected={language === "de"}
+                onClick={() => {
+                  setLanguage("de" as Language);
+                  setIsLangOpen(false);
+                }}
+              >
                 <span className="flag flag-de" aria-hidden="true" />
-                Nemet
+                {t("navLanguageDe")}
               </button>
-              <button className="lang-item" type="button" role="option">
+              <button
+                className="lang-item"
+                type="button"
+                role="option"
+                aria-selected={language === "en"}
+                onClick={() => {
+                  setLanguage("en" as Language);
+                  setIsLangOpen(false);
+                }}
+              >
                 <span className="flag flag-en" aria-hidden="true" />
-                Angol
+                {t("navLanguageEn")}
               </button>
             </div>
           </div>

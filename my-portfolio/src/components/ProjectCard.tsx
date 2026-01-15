@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { useI18n } from "../i18n/I18nProvider";
 
 export type ProjectCardProps = {
   title: string;
@@ -22,6 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const rel = targetBlank ? "noopener noreferrer" : undefined;
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     if (!isPreviewOpen) {
@@ -52,7 +54,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 className="image-modal__close"
                 type="button"
                 onClick={() => setIsPreviewOpen(false)}
-                aria-label="Bezaras"
+                aria-label={t("closeLabel")}
               >
                 x
               </button>
@@ -87,9 +89,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             href={href}
             target={targetBlank ? "_blank" : undefined}
             rel={rel}
-            aria-label={`${title} megnyitasa`}
+            aria-label={`${title} ${t("openProjectLabel")}`}
           >
-            Megnyitas
+            {t("openProject")}
             <span className="link-icon" aria-hidden="true" />
           </a>
         </div>
@@ -107,7 +109,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 className="shot-button"
                 type="button"
                 onClick={() => setIsPreviewOpen(true)}
-                aria-label={`${title} screenshot nagyitasa`}
+                aria-label={`${title} ${t("openImageLabel")}`}
               >
                 <img src={screenshot} alt={`${title} screenshot`} loading="lazy" />
               </button>

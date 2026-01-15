@@ -1,30 +1,23 @@
 import React from "react";
+import { useI18n } from "../i18n/I18nProvider";
 
 const Hero: React.FC = () => {
+  const { t } = useI18n();
   return (
     <>
       <div id="portfolio" className="anchor-offset" />
       <section className="hero">
         <div className="hero-content">
-          <p className="hero-eyebrow">Frontend developer / Full-stack projects</p>
+          <p className="hero-eyebrow">{t("heroEyebrow")}</p>
           <h2>Bakos Gergo</h2>
-          <p className="hero-lead">
-            BME VIK-es mernokinformatikuskent vegeztem, es mar tobb
-            csapatprojektben is bizonyitottam. Reacttal 1 ev tapasztalatom van,
-            HTML + CSS-ben 4-5 evet dolgoztam, ezert szivesen epitek letisztult,
-            gyors es megbizhato feluleteket.
-          </p>
-          <p className="hero-lead">
-            A celom, hogy a design elegans legyen, a hasznalat pedig egyszeru
-            es magatol ertetodo. Olyan termekeket keszitek, amelyek nemcsak
-            szep, hanem hasznos elmenyt is adnak.
-          </p>
+          <p className="hero-lead">{t("heroLead1")}</p>
+          <p className="hero-lead">{t("heroLead2")}</p>
           <div className="hero-actions">
             <a className="btn-primary" href="/oneletrajz.pdf" download>
-              Oneletrajz letoltes
+              {t("heroCtaCv")}
             </a>
             <a className="btn-ghost" href="#projektek">
-              Projektek
+              {t("heroCtaProjects")}
             </a>
           </div>
           <div className="hero-tech">

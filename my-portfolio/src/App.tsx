@@ -7,10 +7,12 @@ import Welcome from "./components/Welcome";
 import Reveal from "./components/Reveal";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+import { I18nProvider } from "./i18n/I18nProvider";
 
 const App: React.FC = () => {
   return (
-    <div className="page">
+    <I18nProvider>
+      <div className="page">
         <div className="bg-aurora" />
         <div className="bg-orbs" />
         <div className="bg-noise" />
@@ -105,7 +107,8 @@ A frontend React/TypeScript alapA§ (pl. App.tsx), kontextus-kezelAcssel, bejele
             </Reveal>
           </Box>
         </Container>
-    </div>
+      </div>
+    </I18nProvider>
   );
 };
 
