@@ -21,6 +21,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden;
+}
+
 .page {
   min-height: 100dvh;
   color: var(--text-primary);
@@ -935,6 +940,70 @@ html {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.shot-button {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.shot-button img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.image-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 8, 16, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.image-modal__content {
+  position: relative;
+  z-index: 1;
+  max-width: min(92vw, 960px);
+  max-height: calc(100vh - 80px);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(10, 12, 18, 0.92);
+  box-shadow: 0 30px 70px rgba(6, 8, 16, 0.6);
+}
+
+.image-modal__content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: calc(100vh - 140px);
+  object-fit: contain;
+}
+
+.image-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(8, 10, 16, 0.65);
+  color: #f8f7f4;
+  cursor: pointer;
 }
 
 .card-main a {

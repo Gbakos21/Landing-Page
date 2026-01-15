@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 export type ProjectCardProps = {
   title: string;
@@ -20,6 +21,46 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   screenshot,
 }) => {
   const rel = targetBlank ? "noopener noreferrer" : undefined;
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isPreviewOpen) {
+      document.body.classList.remove("no-scroll");
+      document.documentElement.classList.remove("no-scroll");
+      return;
+    }
+
+    document.body.classList.add("no-scroll");
+    document.documentElement.classList.add("no-scroll");
+
+    return () => {
+      document.body.classList.remove("no-scroll");
+      document.documentElement.classList.remove("no-scroll");
+    };
+  }, [isPreviewOpen]);
+
+  const modal = isPreviewOpen && screenshot && typeof document !== "undefined"
+    ? createPortal(
+        <div className="image-modal" role="dialog" aria-modal="true">
+          <div
+            className="image-modal__backdrop"
+            onClick={() => setIsPreviewOpen(false)}
+          />
+          <div className="image-modal__content">
+            <button
+              className="image-modal__close"
+              type="button"
+              onClick={() => setIsPreviewOpen(false)}
+              aria-label="Bezaras"
+            >
+              x
+            </button>
+            <img src={screenshot} alt={`${title} screenshot nagyban`} />
+          </div>
+        </div>,
+        document.body
+      )
+    : null;
 
   return (
     <article className="card">
@@ -61,11 +102,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 <span className="shot-dot is-green" aria-hidden="true" />
                 <span className="shot-pill" aria-hidden="true" />
               </div>
-              <img src={screenshot} alt={`${title} screenshot`} loading="lazy" />
+              <button
+                className="shot-button"
+                type="button"
+                onClick={() => setIsPreviewOpen(true)}
+                aria-label={`${title} screenshot nagyitasa`}
+              >
+                <img src={screenshot} alt={`${title} screenshot`} loading="lazy" />
+              </button>
             </div>
           </div>
         ) : null}
       </div>
+      {modal}
     </article>
   );
 };
