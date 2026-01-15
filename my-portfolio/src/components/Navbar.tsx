@@ -4,6 +4,7 @@ import smoothScrollToId from "../utils/smoothScrollTo";
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("portfolio");
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -52,25 +53,38 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="site-header">
-      <nav className={`nav${isScrolled ? " is-solid" : ""}`}>
+      <nav className={`nav${isScrolled ? " is-solid" : ""}${isMobileOpen ? " is-open" : ""}`}>
         <a className="brand" href="#portfolio">
           Bakos Gergo
         </a>
-        <div className="nav-links">
-          <a
-            href="#portfolio"
-            className={activeSection === "portfolio" ? "is-active" : undefined}
-            onClick={(event) => handleNavClick(event, "portfolio")}
-          >
-            Portfolio
-          </a>
-          <a
-            href="#projektek"
-            className={activeSection === "projektek" ? "is-active" : undefined}
-            onClick={(event) => handleNavClick(event, "projektek")}
-          >
-            Projektek
-          </a>
+        <div className="nav-row">
+          <div className="nav-links">
+            <a
+              href="#portfolio"
+              className={activeSection === "portfolio" ? "is-active" : undefined}
+              onClick={(event) => handleNavClick(event, "portfolio")}
+            >
+              Portfolio
+            </a>
+            <a
+              href="#projektek"
+              className={activeSection === "projektek" ? "is-active" : undefined}
+              onClick={(event) => handleNavClick(event, "projektek")}
+            >
+              Projektek
+            </a>
+            <button
+              className="nav-toggle"
+              type="button"
+              aria-label="Menu"
+              aria-expanded={isMobileOpen}
+              onClick={() => setIsMobileOpen((prev) => !prev)}
+            >
+              <span className="chev" aria-hidden="true">
+                v
+              </span>
+            </button>
+          </div>
         </div>
         <div className="nav-actions">
           <button className="theme-toggle" type="button" aria-label="Theme toggle">

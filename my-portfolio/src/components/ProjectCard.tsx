@@ -25,31 +25,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <article className="card">
       <div className="card-grid">
         <div className="card-main">
-          <div className="card-image">
-            <img src={image} alt={title} />
-          </div>
-
-          <div className="card-content">
+          <div className="card-header">
+            <div className="card-image">
+              <img src={image} alt={title} />
+            </div>
             <h3>{title}</h3>
-            <p>{description}</p>
-            {tech.length > 0 ? (
-              <ul className="chip-row" aria-label={`${title} technologiak`}>
-                {tech.map((label) => (
-                  <li key={label} className="chip">
-                    {label}
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-            <a
-              href={href}
-              target={targetBlank ? "_blank" : undefined}
-              rel={rel}
-              aria-label={`${title} megnyitasa`}
-            >
-              Megnyitas
-            </a>
           </div>
+          <p>{description}</p>
+          {tech.length > 0 ? (
+            <ul className="chip-row" aria-label={`${title} technologiak`}>
+              {tech.map((label) => (
+                <li key={label} className="chip">
+                  {label}
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          <a
+            href={href}
+            target={targetBlank ? "_blank" : undefined}
+            rel={rel}
+            aria-label={`${title} megnyitasa`}
+          >
+            Megnyitas
+            <span className="link-icon" aria-hidden="true" />
+          </a>
         </div>
 
         {screenshot ? (

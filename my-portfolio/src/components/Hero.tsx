@@ -1,36 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 const Hero: React.FC = () => {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const element = sectionRef.current;
-    if (!element) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <>
       <div id="portfolio" className="anchor-offset" />
-      <section
-        ref={sectionRef}
-        className={`hero hero-animated${isVisible ? " is-visible" : ""}`}
-      >
+      <section className="hero">
         <div className="hero-content">
           <p className="hero-eyebrow">Frontend developer / Full-stack projects</p>
           <h2>Bakos Gergő</h2>

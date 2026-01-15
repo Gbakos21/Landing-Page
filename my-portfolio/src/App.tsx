@@ -4,6 +4,7 @@ import ProjectCard from "./components/ProjectCard";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Welcome from "./components/Welcome";
+import Reveal from "./components/Reveal";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 
@@ -29,10 +30,13 @@ const App: React.FC = () => {
           }}
         >
           <Welcome />
-          <Hero />
+          <Reveal>
+  <Hero />
+</Reveal>
 
-          <div id="projektek" />
-          <ProjectCard
+          <div id="projektek" className="section-anchor" />
+          <Reveal>
+<ProjectCard
             title="Smurf village"
             description="Egy full-stack miniapp, amely Törpök (Smurfs) adatait jeleníti meg áttekintő statisztikákkal, listákkal és részletes nézetekkel. A frontend React + TypeScript alapú, Material UI-val, MUI X charttal és React Routerrel; reszponzív felület és dark mode kapcsoló is van (Tabs/dropdown, téma-váltás). Backend / API: ASP.NET Core Web API, /stat útvonal alatt végpontokkal adja vissza az entitásokat. Az API projekciókkal adja vissza a kapcsolt azonosítókat, amelyeket a kliens oldali hook összefűz."
             href="https://smurf.gbakos.hu"
@@ -40,7 +44,9 @@ const App: React.FC = () => {
             tech={["React", "TypeScript", "MUI", "ASP.NET Core", "REST API"]}
             screenshot="/screenshots/smurf.png"
           />
-          <ProjectCard
+          </Reveal>
+<Reveal>
+<ProjectCard
             title="önlab BME"
             description="BME önálló labor feladatként készítettem el ezt az appot. A Reddit Analyzer feldolgozómagját Python szkriptek adják: a sentiment.py a szentimentelemzést, a rabbitmq.py pedig az üzenetsor-kezelést végzi. 
 
@@ -56,7 +62,9 @@ A frontend React/TypeScript alapú (pl. App.tsx), kontextus-kezeléssel, bejelen
             tech={["React", "TypeScript", "C#", "RabbitMQ", "Docker", "MySQL"]}
             screenshot="/screenshots/analyzer.png"
           />
-          <ProjectCard
+          </Reveal>
+<Reveal>
+<ProjectCard
             title="Weather App"
             description="Ez egy modern, reszponzív időjárás-app, amivel városnév alapján vagy a böngésző geolokációját használva lekérheted az aktuális időjárást. Az OpenWeather adataira épít, üveg-hatású (glass) felületet és dinamikus színátmenetet használ az időjárás típusához igazítva, saját SVG logóval és favikonnal. Technológiák: HTML5 + CSS (modern), Bootstrap 5, Bootstrap Icons, Vanilla JavaScript (fetch + Geolocation API), OpenWeather API, SVG logó és favicon"
             href="https://weather.gbakos.hu"
@@ -64,7 +72,9 @@ A frontend React/TypeScript alapú (pl. App.tsx), kontextus-kezeléssel, bejelen
             tech={["HTML5", "CSS3", "Bootstrap", "JavaScript", "OpenWeather API"]}
             screenshot="/screenshots/weather.png"
           />
-          <ProjectCard
+          </Reveal>
+<Reveal>
+<ProjectCard
             title="playlist"
             description="Kódok, demók és issue-k."
             href="https://playlist.gbakos.hu"
@@ -72,7 +82,9 @@ A frontend React/TypeScript alapú (pl. App.tsx), kontextus-kezeléssel, bejelen
             tech={["Demos", "Experiments"]}
             screenshot="/screenshots/playlist.png"
           />
-          <ProjectCard
+          </Reveal>
+<Reveal>
+<ProjectCard
             title="Zorka"
             description="Doggy games"
             href="https://zorka.gbakos.hu"
@@ -80,7 +92,9 @@ A frontend React/TypeScript alapú (pl. App.tsx), kontextus-kezeléssel, bejelen
             tech={["Web", "Games"]}
             screenshot="/screenshots/zorka.png"
           />
-          <ProjectCard
+          </Reveal>
+<Reveal>
+<ProjectCard
             title="Feladatkezelő"
             description="BME Projektmunka a Design a szoftverfejlesztésben című tárgyhoz"
             href="https://feladatkezelo.gbakos.hu/"
@@ -88,7 +102,8 @@ A frontend React/TypeScript alapú (pl. App.tsx), kontextus-kezeléssel, bejelen
             tech={["BME", "Projektmunka"]}
             screenshot="/screenshots/feladatkezelo.png"
           />
-        </Box>
+        </Reveal>
+</Box>
       </Container>
     </div>
   );
