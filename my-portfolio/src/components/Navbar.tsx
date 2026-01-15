@@ -124,7 +124,11 @@ const Navbar: React.FC = () => {
           </button>
           <div
             className={`lang-select${isLangOpen ? " is-open" : ""}`}
-            onMouseLeave={() => setIsLangOpen(false)}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                setIsLangOpen(false);
+              }
+            }}
           >
             <button
               className="lang-button"

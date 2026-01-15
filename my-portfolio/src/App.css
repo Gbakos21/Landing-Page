@@ -378,9 +378,7 @@ body.no-scroll {
   backdrop-filter: blur(12px);
 }
 
-.lang-select.is-open .lang-menu,
-.lang-select:hover .lang-menu,
-.lang-select:focus-within .lang-menu {
+.lang-select.is-open .lang-menu {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;

@@ -16,7 +16,13 @@ export type TranslationKey =
   | "openProject"
   | "openProjectLabel"
   | "openImageLabel"
-  | "closeLabel";
+  | "closeLabel"
+  | "projectSmurfDesc"
+  | "projectAnalyzerDesc"
+  | "projectWeatherDesc"
+  | "projectPlaylistDesc"
+  | "projectZorkaDesc"
+  | "projectFeladatDesc";
 
 export const translations: Record<Language, Record<TranslationKey, string>> = {
   hu: {
@@ -38,6 +44,16 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     openProjectLabel: "Projekt megnyitasa",
     openImageLabel: "Screenshot nagyitasa",
     closeLabel: "Bezaras",
+    projectSmurfDesc:
+      "Egy full-stack miniapp, amely törpök (Smurfs) adatait jeleníti meg áttekintő statisztikákkal, listákkal és részletes nézetekkel. Frontend: React + TypeScript, Material UI, MUI X chart, React Router; reszponzív felület és dark mode. Backend: ASP.NET Core Web API.",
+    projectAnalyzerDesc:
+      "BME önálló labor projekt. A Reddit Analyzer feldolgozását Python szkriptek adják (sentiment, RabbitMQ kezelés). Aszinkron kommunikáció: RabbitMQ, konténer: Docker, adatbázis: MySQL, admin: phpMyAdmin. Backend C#, WebSocket és Swagger; frontend React/TypeScript, bejelentkezés és statisztikák.",
+    projectWeatherDesc:
+      "Modern, reszponzív időjárás-app városnév vagy geolokáció alapján. OpenWeather API, üveg-hatású felület és dinamikus színátmenet. HTML5, CSS, Bootstrap, vanilla JS.",
+    projectPlaylistDesc: "Kódok, demók és issue-k gyűjteménye.",
+    projectZorkaDesc: "Kutyás játékok és mini kísérletek.",
+    projectFeladatDesc:
+      "BME Projektmunka a Design a szoftverfejlesztésben című tárgyhoz.",
   },
   en: {
     navPortfolio: "Portfolio",
@@ -58,6 +74,16 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     openProjectLabel: "Open project",
     openImageLabel: "Open screenshot",
     closeLabel: "Close",
+    projectSmurfDesc:
+      "A full-stack mini app that shows Smurfs data with overview stats, lists, and detailed views. Frontend: React + TypeScript, Material UI, MUI X charts, React Router; responsive UI and dark mode. Backend: ASP.NET Core Web API.",
+    projectAnalyzerDesc:
+      "BME individual lab project. Reddit Analyzer pipeline in Python (sentiment, RabbitMQ). Async communication with RabbitMQ, Dockerized services, MySQL database, phpMyAdmin admin. C# backend with WebSocket and Swagger; React/TypeScript frontend with auth and stats.",
+    projectWeatherDesc:
+      "Modern, responsive weather app using city name or geolocation. OpenWeather API, glassmorphism UI, and dynamic gradients. HTML5, CSS, Bootstrap, vanilla JS.",
+    projectPlaylistDesc: "A collection of code, demos, and issues.",
+    projectZorkaDesc: "Doggy games and small experiments.",
+    projectFeladatDesc:
+      "BME project work for the Design in Software Development course.",
   },
   de: {
     navPortfolio: "Portfolio",
@@ -78,5 +104,15 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     openProjectLabel: "Projekt oeffnen",
     openImageLabel: "Screenshot oeffnen",
     closeLabel: "Schliessen",
+    projectSmurfDesc:
+      "Eine Full-Stack-Mini-App mit Smurf-Daten: Uebersicht, Statistiken, Listen und Detailansichten. Frontend: React + TypeScript, Material UI, MUI X Charts, React Router; responsive UI und Dark Mode. Backend: ASP.NET Core Web API.",
+    projectAnalyzerDesc:
+      "BME Einzellabor-Projekt. Reddit-Analyzer in Python (Sentiment, RabbitMQ). Asynchrone Kommunikation mit RabbitMQ, Docker, MySQL, phpMyAdmin. C# Backend mit WebSocket und Swagger; React/TypeScript Frontend mit Login und Statistiken.",
+    projectWeatherDesc:
+      "Moderne, responsive Wetter-App mit Stadtname oder Geolocation. OpenWeather API, Glassmorphism UI und dynamische Verlaeufe. HTML5, CSS, Bootstrap, Vanilla JS.",
+    projectPlaylistDesc: "Sammlung von Code, Demos und Issues.",
+    projectZorkaDesc: "Hunde-Spiele und kleine Experimente.",
+    projectFeladatDesc:
+      "BME Projektarbeit fuer den Kurs Design in der Softwareentwicklung.",
   },
 };
