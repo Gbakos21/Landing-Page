@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
       <section className="hero">
         <div className="hero-content">
           <p className="hero-eyebrow">Frontend developer / Full-stack projects</p>
-          <h2>Bakos Gergő</h2>
+          <h2>Bakos Gergo</h2>
           <p className="hero-lead">
             BME VIK-es mernokinformatikuskent vegeztem, es mar tobb
             csapatprojektben is bizonyitottam. Reacttal 1 ev tapasztalatom van,

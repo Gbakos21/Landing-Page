@@ -5,6 +5,7 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("portfolio");
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -14,6 +15,23 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const useLight = saved === "light";
+    setIsLightMode(useLight);
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isLightMode) {
+      root.classList.add("theme-light");
+      localStorage.setItem("theme", "light");
+    } else {
+      root.classList.remove("theme-light");
+      localStorage.setItem("theme", "dark");
+    }
+  }, [isLightMode]);
 
   useEffect(() => {
     const sectionIds = ["portfolio", "projektek"];
@@ -58,36 +76,42 @@ const Navbar: React.FC = () => {
           Bakos Gergo
         </a>
         <div className="nav-row">
-          <div className="nav-links">
-            <a
-              href="#portfolio"
-              className={activeSection === "portfolio" ? "is-active" : undefined}
-              onClick={(event) => handleNavClick(event, "portfolio")}
-            >
-              Portfolio
-            </a>
-            <a
-              href="#projektek"
-              className={activeSection === "projektek" ? "is-active" : undefined}
-              onClick={(event) => handleNavClick(event, "projektek")}
-            >
-              Projektek
-            </a>
-            <button
-              className="nav-toggle"
-              type="button"
-              aria-label="Menu"
-              aria-expanded={isMobileOpen}
-              onClick={() => setIsMobileOpen((prev) => !prev)}
-            >
-              <span className="chev" aria-hidden="true">
-                v
-              </span>
-            </button>
-          </div>
+        <div className="nav-links">
+          <a
+            href="#portfolio"
+            className={activeSection === "portfolio" ? "is-active" : undefined}
+            onClick={(event) => handleNavClick(event, "portfolio")}
+          >
+            Portfolio
+          </a>
+          <a
+            href="#projektek"
+            className={activeSection === "projektek" ? "is-active" : undefined}
+            onClick={(event) => handleNavClick(event, "projektek")}
+          >
+            Projektek
+          </a>
+          <button
+            className="nav-toggle"
+            type="button"
+            aria-label="Menu"
+            aria-expanded={isMobileOpen}
+            onClick={() => setIsMobileOpen((prev) => !prev)}
+          >
+            <span className="chev" aria-hidden="true">
+              v
+            </span>
+          </button>
+        </div>
         </div>
         <div className="nav-actions">
-          <button className="theme-toggle" type="button" aria-label="Theme toggle">
+          <button
+            className="theme-toggle"
+            type="button"
+            aria-label="Theme toggle"
+            aria-pressed={isLightMode}
+            onClick={() => setIsLightMode((prev) => !prev)}
+          >
             <span className="theme-icon sun" aria-hidden="true" />
             <span className="theme-icon moon" aria-hidden="true" />
           </button>
@@ -100,18 +124,18 @@ const Navbar: React.FC = () => {
               </span>
             </button>
             <div className="lang-menu" role="listbox">
-              <div className="lang-item" role="option">
+              <button className="lang-item" type="button" role="option">
                 <span className="flag flag-hu" aria-hidden="true" />
                 Magyar
-              </div>
-              <div className="lang-item" role="option">
+              </button>
+              <button className="lang-item" type="button" role="option">
                 <span className="flag flag-de" aria-hidden="true" />
                 Nemet
-              </div>
-              <div className="lang-item" role="option">
+              </button>
+              <button className="lang-item" type="button" role="option">
                 <span className="flag flag-en" aria-hidden="true" />
                 Angol
-              </div>
+              </button>
             </div>
           </div>
         </div>

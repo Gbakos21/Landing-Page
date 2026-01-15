@@ -39,28 +39,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     };
   }, [isPreviewOpen]);
 
-  const modal = isPreviewOpen && screenshot && typeof document !== "undefined"
-    ? createPortal(
-        <div className="image-modal" role="dialog" aria-modal="true">
-          <div
-            className="image-modal__backdrop"
-            onClick={() => setIsPreviewOpen(false)}
-          />
-          <div className="image-modal__content">
-            <button
-              className="image-modal__close"
-              type="button"
+  const modal =
+    isPreviewOpen && screenshot && typeof document !== "undefined"
+      ? createPortal(
+          <div className="image-modal" role="dialog" aria-modal="true">
+            <div
+              className="image-modal__backdrop"
               onClick={() => setIsPreviewOpen(false)}
-              aria-label="Bezaras"
-            >
-              x
-            </button>
-            <img src={screenshot} alt={`${title} screenshot nagyban`} />
-          </div>
-        </div>,
-        document.body
-      )
-    : null;
+            />
+            <div className="image-modal__content">
+              <button
+                className="image-modal__close"
+                type="button"
+                onClick={() => setIsPreviewOpen(false)}
+                aria-label="Bezaras"
+              >
+                x
+              </button>
+              <img src={screenshot} alt={`${title} screenshot nagyban`} />
+            </div>
+          </div>,
+          document.body
+        )
+      : null;
 
   return (
     <article className="card">
