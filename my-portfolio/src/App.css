@@ -804,10 +804,12 @@ body.no-scroll {
   background: rgba(11, 13, 18, 0.45);
   display: grid;
   gap: 6px;
+  animation: accentFloat 8s ease-in-out infinite;
 }
 
 .accent-card.is-alt {
   background: rgba(255, 255, 255, 0.16);
+  animation-delay: 1.4s;
 }
 
 .accent-title {
@@ -824,6 +826,16 @@ body.no-scroll {
 .accent-meta {
   font-size: 12px;
   color: var(--text-muted);
+}
+
+@keyframes accentFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .card {
@@ -929,14 +941,260 @@ body.no-scroll {
   margin: 0 0 16px;
 }
 
-.chip {
+.chip,
+.tech-chip {
+  --chip-hue: 210;
   font-size: 12px;
   letter-spacing: 0.3px;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid var(--chip-border);
-  background: var(--chip-bg);
+  border: 1px solid hsla(var(--chip-hue), 70%, 55%, 0.4);
+  background: hsla(var(--chip-hue), 70%, 55%, 0.16);
   color: var(--text-primary);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.theme-light .chip,
+.theme-light .tech-chip {
+  border-color: hsla(var(--chip-hue), 60%, 35%, 0.35);
+  background: hsla(var(--chip-hue), 60%, 35%, 0.12);
+}
+
+.chip[data-tech="react"],
+.tech-chip[data-tech="react"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="typescript"],
+.tech-chip[data-tech="typescript"] {
+  --chip-hue: 210;
+}
+
+.chip[data-tech="mui"],
+.tech-chip[data-tech="mui"] {
+  --chip-hue: 265;
+}
+
+.chip[data-tech="nextjs"],
+.tech-chip[data-tech="nextjs"] {
+  --chip-hue: 220;
+}
+
+.chip[data-tech="tailwindcss"],
+.tech-chip[data-tech="tailwindcss"] {
+  --chip-hue: 185;
+}
+
+.chip[data-tech="javascript"],
+.tech-chip[data-tech="javascript"] {
+  --chip-hue: 48;
+}
+
+.chip[data-tech="html5"],
+.tech-chip[data-tech="html5"] {
+  --chip-hue: 18;
+}
+
+.chip[data-tech="css3"],
+.tech-chip[data-tech="css3"] {
+  --chip-hue: 210;
+}
+
+.chip[data-tech="scss"],
+.tech-chip[data-tech="scss"] {
+  --chip-hue: 310;
+}
+
+.chip[data-tech="python"],
+.tech-chip[data-tech="python"] {
+  --chip-hue: 45;
+}
+
+.chip[data-tech="dotnetcsharp"],
+.tech-chip[data-tech="dotnetcsharp"] {
+  --chip-hue: 285;
+}
+
+.chip[data-tech="rabbitmq"],
+.tech-chip[data-tech="rabbitmq"] {
+  --chip-hue: 345;
+}
+
+.chip[data-tech="mysql"],
+.tech-chip[data-tech="mysql"] {
+  --chip-hue: 30;
+}
+
+.chip[data-tech="docker"],
+.tech-chip[data-tech="docker"] {
+  --chip-hue: 210;
+}
+
+.chip[data-tech="sql"],
+.tech-chip[data-tech="sql"] {
+  --chip-hue: 160;
+}
+
+.chip[data-tech="identity"],
+.tech-chip[data-tech="identity"] {
+  --chip-hue: 260;
+}
+
+.chip[data-tech="aspnetcore"],
+.tech-chip[data-tech="aspnetcore"] {
+  --chip-hue: 265;
+}
+
+.chip[data-tech="bootstrap5"],
+.tech-chip[data-tech="bootstrap5"],
+.chip[data-tech="bootstrap"],
+.tech-chip[data-tech="bootstrap"] {
+  --chip-hue: 260;
+}
+
+.chip[data-tech="svg"],
+.tech-chip[data-tech="svg"] {
+  --chip-hue: 15;
+}
+
+.chip[data-tech="webaudioapi"],
+.tech-chip[data-tech="webaudioapi"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="localstorage"],
+.tech-chip[data-tech="localstorage"] {
+  --chip-hue: 120;
+}
+
+.chip[data-tech="indexeddb"],
+.tech-chip[data-tech="indexeddb"] {
+  --chip-hue: 160;
+}
+
+.chip[data-tech="jsmediatags"],
+.tech-chip[data-tech="jsmediatags"] {
+  --chip-hue: 330;
+}
+
+.chip[data-tech="itunesapi"],
+.tech-chip[data-tech="itunesapi"] {
+  --chip-hue: 350;
+}
+
+.chip[data-tech="musicbrainzapi"],
+.tech-chip[data-tech="musicbrainzapi"] {
+  --chip-hue: 15;
+}
+
+.chip[data-tech="wikipediaapi"],
+.tech-chip[data-tech="wikipediaapi"] {
+  --chip-hue: 0;
+}
+
+.chip[data-tech="googlemapsiframe"],
+.tech-chip[data-tech="googlemapsiframe"] {
+  --chip-hue: 110;
+}
+
+.chip[data-tech="mapboxgljs"],
+.tech-chip[data-tech="mapboxgljs"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="ga4"],
+.tech-chip[data-tech="ga4"] {
+  --chip-hue: 35;
+}
+
+.chip[data-tech="gtm"],
+.tech-chip[data-tech="gtm"] {
+  --chip-hue: 25;
+}
+
+.chip[data-tech="microsoftclarity"],
+.tech-chip[data-tech="microsoftclarity"] {
+  --chip-hue: 195;
+}
+
+.chip[data-tech="linuxserver"],
+.tech-chip[data-tech="linuxserver"] {
+  --chip-hue: 120;
+}
+
+.chip[data-tech="windowsserver"],
+.tech-chip[data-tech="windowsserver"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="vpn"],
+.tech-chip[data-tech="vpn"] {
+  --chip-hue: 180;
+}
+
+.chip[data-tech="networksecurity"],
+.tech-chip[data-tech="networksecurity"] {
+  --chip-hue: 10;
+}
+
+.chip[data-tech="canvasapi"],
+.tech-chip[data-tech="canvasapi"] {
+  --chip-hue: 20;
+}
+
+.chip[data-tech="vite"],
+.tech-chip[data-tech="vite"] {
+  --chip-hue: 45;
+}
+
+.chip[data-tech="openaichatgptapigpt4o"],
+.tech-chip[data-tech="openaichatgptapigpt4o"] {
+  --chip-hue: 165;
+}
+
+.chip[data-tech="tkinter"],
+.tech-chip[data-tech="tkinter"] {
+  --chip-hue: 120;
+}
+
+.chip[data-tech="threading"],
+.tech-chip[data-tech="threading"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="queue"],
+.tech-chip[data-tech="queue"] {
+  --chip-hue: 230;
+}
+
+.chip[data-tech="langdetect"],
+.tech-chip[data-tech="langdetect"] {
+  --chip-hue: 140;
+}
+
+.chip[data-tech="openpyxl"],
+.tech-chip[data-tech="openpyxl"] {
+  --chip-hue: 90;
+}
+
+.chip[data-tech="excelxlsx"],
+.tech-chip[data-tech="excelxlsx"] {
+  --chip-hue: 100;
+}
+
+.chip[data-tech="regulariskifejezesek"],
+.tech-chip[data-tech="regulariskifejezesek"] {
+  --chip-hue: 300;
+}
+
+.chip[data-tech="localstoragekeyring"],
+.tech-chip[data-tech="localstoragekeyring"] {
+  --chip-hue: 120;
+}
+
+.chip[data-tech="bootstrapicons"],
+.tech-chip[data-tech="bootstrapicons"] {
+  --chip-hue: 260;
 }
 
 .card-shot {
@@ -1112,6 +1370,45 @@ body.no-scroll {
 .card-main a:hover .link-icon {
   transform: rotate(45deg) scale(1.12);
   border-color: var(--text-primary);
+}
+
+.download-icon {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  position: relative;
+  margin-left: 2px;
+  transition: transform 0.2s ease;
+}
+
+.download-icon::before,
+.download-icon::after {
+  content: "";
+  position: absolute;
+  background: var(--text-primary);
+}
+
+.download-icon::before {
+  width: 2px;
+  height: 8px;
+  left: 5px;
+  top: 0;
+  border-radius: 2px;
+}
+
+.download-icon::after {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--text-primary);
+  border-bottom: 2px solid var(--text-primary);
+  transform: rotate(45deg);
+  left: 2px;
+  top: 4px;
+  background: transparent;
+}
+
+.card-main a:hover .download-icon {
+  transform: translateY(1px);
 }
 
 @media (max-width: 840px) {

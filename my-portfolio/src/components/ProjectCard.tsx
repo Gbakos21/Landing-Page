@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useI18n } from "../i18n/I18nProvider";
+import techKey from "../utils/techColor";
 
 export type ProjectCardProps = {
   title: string;
   description: string;
   href: string;
   targetBlank?: boolean;
+  download?: boolean;
+  actionLabel?: string;
+  actionAriaLabel?: string;
   image: string;
   tech?: string[];
   screenshot?: string;
@@ -17,6 +21,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   href,
   targetBlank = true,
+  download = false,
+  actionLabel,
+  actionAriaLabel,
   image,
   tech = [],
   screenshot,
@@ -24,6 +31,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const rel = targetBlank ? "noopener noreferrer" : undefined;
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const { t } = useI18n();
+  const label = actionLabel ?? t("openProject");
+  const ariaLabel = actionAriaLabel ?? `${title} ${t("openProjectLabel")}`;
 
   useEffect(() => {
     if (!isPreviewOpen) {
@@ -79,7 +88,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {tech.length > 0 ? (
             <ul className="chip-row" aria-label={`${title} technologiak`}>
               {tech.map((label) => (
-                <li key={label} className="chip">
+                <li key={label} className="chip" data-tech={techKey(label)}>
                   {label}
                 </li>
               ))}
@@ -89,10 +98,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             href={href}
             target={targetBlank ? "_blank" : undefined}
             rel={rel}
-            aria-label={`${title} ${t("openProjectLabel")}`}
+            aria-label={ariaLabel}
+            download={download ? "" : undefined}
           >
-            {t("openProject")}
-            <span className="link-icon" aria-hidden="true" />
+            {label}
+            <span
+              className={download ? "download-icon" : "link-icon"}
+              aria-hidden="true"
+            />
           </a>
         </div>
 
