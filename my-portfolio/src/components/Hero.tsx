@@ -23,11 +23,13 @@ const Hero: React.FC = () => {
             gyors elsajatitasara es csapatmunkara.
           </p>
           <div className="hero-actions">
-            <a className="btn-primary" href="/CV-Bakos_Gergo.pdf" download>
+            <a className="action-button" href="/CV-Bakos_Gergo.pdf" download>
               {t("heroCtaCv")}
+              <span className="download-icon" aria-hidden="true" />
             </a>
-            <a className="btn-ghost" href="#projektek">
+            <a className="action-button" href="#projektek">
               {t("heroCtaProjects")}
+              <span className="link-icon" aria-hidden="true" />
             </a>
           </div>
           <div className="hero-tech">

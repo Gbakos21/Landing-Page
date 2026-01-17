@@ -436,15 +436,15 @@ body.no-scroll {
 }
 
 .flag-hu {
-  background: center / cover no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23ffffff'/%3E%3Crect width='3' height='0.6667' y='0' fill='%23ce2939'/%3E%3Crect width='3' height='0.6667' y='1.3333' fill='%23477050'/%3E%3C/svg%3E");
+  background: center / cover no-repeat url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23FFFFFF'%2F%3E%3Crect%20width%3D'3'%20height%3D'0.6667'%20y%3D'0'%20fill%3D'%23CE2939'%2F%3E%3Crect%20width%3D'3'%20height%3D'0.6667'%20y%3D'1.3333'%20fill%3D'%23477050'%2F%3E%3C%2Fsvg%3E");
 }
 
 .flag-de {
-  background: center / cover no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='2' fill='%23ffce00'/%3E%3Crect width='3' height='0.6667' y='0' fill='%23000000'/%3E%3Crect width='3' height='0.6667' y='0.6667' fill='%23dd0000'/%3E%3C/svg%3E");
+  background: center / cover no-repeat url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%203%202'%3E%3Crect%20width%3D'3'%20height%3D'2'%20fill%3D'%23FFCE00'%2F%3E%3Crect%20width%3D'3'%20height%3D'0.6667'%20y%3D'0'%20fill%3D'%23000000'%2F%3E%3Crect%20width%3D'3'%20height%3D'0.6667'%20y%3D'0.6667'%20fill%3D'%23DD0000'%2F%3E%3C%2Fsvg%3E");
 }
 
 .flag-en {
-  background: center / cover no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23012169'/%3E%3Cpath d='M0,0 60,30 M60,0 0,30' stroke='%23ffffff' stroke-width='6'/%3E%3Cpath d='M0,0 60,30 M60,0 0,30' stroke='%23C8102E' stroke-width='3'/%3E%3Cpath d='M30,0 v30 M0,15 h60' stroke='%23ffffff' stroke-width='10'/%3E%3Cpath d='M30,0 v30 M0,15 h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E");
+  background: center / cover no-repeat url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2060%2030'%3E%3Crect%20width%3D'60'%20height%3D'30'%20fill%3D'%23012169'%2F%3E%3Cpath%20fill%3D'%23FFF'%20d%3D'M0%200l25%2012.5V0h10v12.5L60%200v5L35%2017.5V30H25V17.5L0%2030z'%2F%3E%3Cpath%20fill%3D'%23C8102E'%20d%3D'M0%200l25%2012.5V0h6v13L60%200v2L32%2016.5V30h-4V16.5L0%2030z'%2F%3E%3Cpath%20fill%3D'%23FFF'%20d%3D'M25%200h10v30H25z'%2F%3E%3Cpath%20fill%3D'%23FFF'%20d%3D'M0%2010h60v10H0z'%2F%3E%3Cpath%20fill%3D'%23C8102E'%20d%3D'M27%200h6v30h-6z'%2F%3E%3Cpath%20fill%3D'%23C8102E'%20d%3D'M0%2012h60v6H0z'%2F%3E%3C%2Fsvg%3E");
 }
 
 .hero {
@@ -1378,7 +1378,8 @@ body.no-scroll {
   cursor: pointer;
 }
 
-.card-main a {
+.card-main a,
+.action-button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1400,7 +1401,8 @@ body.no-scroll {
   justify-self: start;
 }
 
-.card-main a:hover {
+.card-main a:hover,
+.action-button:hover {
   border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-1px);
   box-shadow: 0 10px 22px rgba(6, 8, 16, 0.32), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
@@ -1420,7 +1422,8 @@ body.no-scroll {
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.card-main a:hover .link-icon {
+.card-main a:hover .link-icon,
+.action-button:hover .link-icon {
   transform: rotate(45deg) scale(1.12);
   border-color: var(--text-primary);
 }
@@ -1460,7 +1463,8 @@ body.no-scroll {
   background: transparent;
 }
 
-.card-main a:hover .download-icon {
+.card-main a:hover .download-icon,
+.action-button:hover .download-icon {
   transform: translateY(1px);
 }
 

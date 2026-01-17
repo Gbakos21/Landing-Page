@@ -48,41 +48,41 @@ const AppContent: React.FC = () => {
               screenshot="/screenshots/smurf.png"
             />
           </Reveal>
-            <Reveal>
-              <ProjectCard
-                title="BME Diplomadolgozat"
-                description={t("projectAnalyzerDesc")}
-                href="https://analyzer.gbakos.hu"
-                image="/reddit_analyzer.png"
-                tech={[
-                  "React",
-                  "TypeScript",
-                  "Material UI",
-                  "WebSocket",
-                  "C#",
-                  ".NET Core",
-                  "ASP.NET Core",
-                  "REST API",
-                  "Python",
-                  "BeautifulSoup",
-                  "Sentiment analysis",
-                  "Ollama",
-                  "LM Studio",
-                  "LLM-ek",
-                  "RabbitMQ",
-                  "MySQL",
-                  "phpMyAdmin",
-                  "Docker",
-                  "Reddit",
-                  "YouTube",
-                  "Stack Overflow",
-                  "Google Reviews",
-                  "X (Twitter)",
-                  "Gyakori kerdesek",
-                ]}
-                screenshot="/screenshots/analyzer.png"
-              />
-            </Reveal>
+          <Reveal>
+            <ProjectCard
+              title="BME Diplomadolgozat"
+              description={t("projectAnalyzerDesc")}
+              href="https://analyzer.gbakos.hu"
+              image="/reddit_analyzer.png"
+              tech={[
+                "React",
+                "TypeScript",
+                "Material UI",
+                "WebSocket",
+                "C#",
+                ".NET Core",
+                "ASP.NET Core",
+                "REST API",
+                "Python",
+                "BeautifulSoup",
+                "Sentiment analysis",
+                "Ollama",
+                "LM Studio",
+                "LLM-ek",
+                "RabbitMQ",
+                "MySQL",
+                "phpMyAdmin",
+                "Docker",
+                "Reddit",
+                "YouTube",
+                "Stack Overflow",
+                "Google Reviews",
+                "X (Twitter)",
+                "Gyakori kerdesek",
+              ]}
+              screenshot="/screenshots/analyzer.png"
+            />
+          </Reveal>
           <Reveal>
             <ProjectCard
               title="Weather App"
@@ -95,7 +95,7 @@ const AppContent: React.FC = () => {
           </Reveal>
           <Reveal>
             <ProjectCard
-              title="playlist"
+              title="PlayList"
               description={t("projectPlaylistDesc")}
               href="https://playlist.gbakos.hu"
               image="/playlist.svg"
@@ -186,19 +186,19 @@ const AppContent: React.FC = () => {
               actionLabel={t("downloadLabel")}
               actionAriaLabel={`WebShop fordító ${t("downloadAriaLabel")}`}
               image="/fordito.png"
-                tech={[
-                  "Python",
-                  "OpenAI ChatGPT API (gpt-4o)",
-                  "pandas",
-                  "Tkinter",
-                  "threading",
-                  "queue",
-                  "langdetect",
-                  "openpyxl",
-                  "LocalStorage + keyring",
-                  "Excel (XLSX)",
-                  "Regularis kifejezesek",
-                ]}
+              tech={[
+                "Python",
+                "OpenAI ChatGPT API (gpt-4o)",
+                "pandas",
+                "Tkinter",
+                "threading",
+                "queue",
+                "langdetect",
+                "openpyxl",
+                "LocalStorage + keyring",
+                "Excel (XLSX)",
+                "Regularis kifejezesek",
+              ]}
               screenshot="/screenshots/fordito.png"
             />
           </Reveal>
