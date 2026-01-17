@@ -141,11 +141,9 @@ const Navbar: React.FC = () => {
               {language === "hu"
                 ? t("navLanguageHu")
                 : language === "en"
-                  ? t("navLanguageEn")
-                  : t("navLanguageDe")}
-              <span className="chev" aria-hidden="true">
-                v
-              </span>
+                ? t("navLanguageEn")
+                : t("navLanguageDe")}
+              <span className="chev" aria-hidden="true" />
             </button>
             <div className="lang-menu" role="listbox">
               <button
