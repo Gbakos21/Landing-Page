@@ -53,7 +53,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     projectSmurfDesc:
       "Egy full-stack miniapp, amely törpök (Smurfs) adatait jeleníti meg áttekintő statisztikákkal, listákkal és részletes nézetekkel. Frontend: React + TypeScript, Material UI, MUI X chart, React Router; reszponzív felület és dark mode. Backend: ASP.NET Core Web API.",
     projectAnalyzerDesc:
-      "BME önálló labor projekt. A Reddit Analyzer feldolgozását Python szkriptek adják (sentiment, RabbitMQ kezelés). Aszinkron kommunikáció: RabbitMQ, konténer: Docker, adatbázis: MySQL, admin: phpMyAdmin. Backend C#, WebSocket és Swagger; frontend React/TypeScript, bejelentkezés és statisztikák.",
+      "Ez a projekt egy webes alkalmazás, amely különböző közösségi platformokról (például Reddit, Google Reviews, X/Twitter, YouTube) származó kommentek automatikus begyűjtését és mesterséges intelligencián alapuló hangulatelemzését végzi. A rendszer a háttérben párhuzamos feldolgozással, üzenetsorok segítségével dolgozza fel a nagy mennyiségű szöveges adatot, majd az eredményeket adatbázisban tárolja és valós időben jeleníti meg egy modern, reszponzív webes felületen grafikonok és statisztikák formájában.",
     projectWeatherDesc:
       "Modern, reszponzív időjárás-app városnév vagy geolokáció alapján. OpenWeather API, üveg-hatású felület és dinamikus színátmenet. HTML5, CSS, Bootstrap, vanilla JS.",
     projectPlaylistDesc:
@@ -91,7 +91,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     projectSmurfDesc:
       "A full-stack mini app that shows Smurfs data with overview stats, lists, and detailed views. Frontend: React + TypeScript, Material UI, MUI X charts, React Router; responsive UI and dark mode. Backend: ASP.NET Core Web API.",
     projectAnalyzerDesc:
-      "BME individual lab project. Reddit Analyzer pipeline in Python (sentiment, RabbitMQ). Async communication with RabbitMQ, Dockerized services, MySQL database, phpMyAdmin admin. C# backend with WebSocket and Swagger; React/TypeScript frontend with auth and stats.",
+      "A web app that collects comments from multiple platforms (e.g., Reddit, Google Reviews, X/Twitter, YouTube) and runs AI-based sentiment analysis. The system processes large volumes in parallel using message queues, stores results in a database, and shows them in real time with charts and stats in a modern, responsive UI.",
     projectWeatherDesc:
       "Modern, responsive weather app using city name or geolocation. OpenWeather API, glassmorphism UI, and dynamic gradients. HTML5, CSS, Bootstrap, vanilla JS.",
     projectPlaylistDesc:
@@ -129,7 +129,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     projectSmurfDesc:
       "Eine Full-Stack-Mini-App mit Smurf-Daten: Uebersicht, Statistiken, Listen und Detailansichten. Frontend: React + TypeScript, Material UI, MUI X Charts, React Router; responsive UI und Dark Mode. Backend: ASP.NET Core Web API.",
     projectAnalyzerDesc:
-      "BME Einzellabor-Projekt. Reddit-Analyzer in Python (Sentiment, RabbitMQ). Asynchrone Kommunikation mit RabbitMQ, Docker, MySQL, phpMyAdmin. C# Backend mit WebSocket und Swagger; React/TypeScript Frontend mit Login und Statistiken.",
+      "Eine Web-App, die Kommentare von mehreren Plattformen (z. B. Reddit, Google Reviews, X/Twitter, YouTube) sammelt und KI-basierte Sentiment-Analysen durchfuehrt. Das System verarbeitet grosse Datenmengen parallel ueber Message Queues, speichert Ergebnisse in einer Datenbank und zeigt sie in Echtzeit mit Charts und Statistiken in einer modernen, responsiven UI.",
     projectWeatherDesc:
       "Moderne, responsive Wetter-App mit Stadtname oder Geolocation. OpenWeather API, Glassmorphism UI und dynamische Verlaeufe. HTML5, CSS, Bootstrap, Vanilla JS.",
     projectPlaylistDesc:

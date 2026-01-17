@@ -775,7 +775,10 @@ body.no-scroll {
   justify-content: center;
   border-radius: 999px;
   padding: 10px 18px;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
@@ -975,6 +978,11 @@ body.no-scroll {
   --chip-hue: 265;
 }
 
+.chip[data-tech="materialui"],
+.tech-chip[data-tech="materialui"] {
+  --chip-hue: 265;
+}
+
 .chip[data-tech="nextjs"],
 .tech-chip[data-tech="nextjs"] {
   --chip-hue: 220;
@@ -1045,6 +1053,50 @@ body.no-scroll {
   --chip-hue: 265;
 }
 
+.chip[data-tech="dotnetcore"],
+.tech-chip[data-tech="dotnetcore"] {
+  --chip-hue: 285;
+}
+
+.chip[data-tech="websocket"],
+.tech-chip[data-tech="websocket"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="restapi"],
+.tech-chip[data-tech="restapi"] {
+  --chip-hue: 220;
+}
+
+.chip[data-tech="beautifulsoup"],
+.tech-chip[data-tech="beautifulsoup"] {
+  --chip-hue: 95;
+}
+
+.chip[data-tech="sentimentanalysis"],
+.tech-chip[data-tech="sentimentanalysis"] {
+  --chip-hue: 25;
+}
+
+.chip[data-tech="llmek"],
+.tech-chip[data-tech="llmek"] {
+  --chip-hue: 310;
+}
+
+.chip[data-tech="phpmyadmin"],
+.tech-chip[data-tech="phpmyadmin"] {
+  --chip-hue: 50;
+}
+
+.chip[data-tech="xtwitter"],
+.tech-chip[data-tech="xtwitter"] {
+  --chip-hue: 210;
+}
+
+.chip[data-tech="gyakorikerdesek"],
+.tech-chip[data-tech="gyakorikerdesek"] {
+  --chip-hue: 15;
+}
 .chip[data-tech="bootstrap5"],
 .tech-chip[data-tech="bootstrap5"],
 .chip[data-tech="bootstrap"],
@@ -1333,7 +1385,10 @@ body.no-scroll {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 999px;
   padding: 7px 14px;

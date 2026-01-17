@@ -48,16 +48,41 @@ const AppContent: React.FC = () => {
               screenshot="/screenshots/smurf.png"
             />
           </Reveal>
-          <Reveal>
-            <ProjectCard
-              title="Önlab BME"
-              description={t("projectAnalyzerDesc")}
-              href="https://analyzer.gbakos.hu"
-              image="/reddit_analyzer.png"
-              tech={["React", "TypeScript", "C#", "RabbitMQ", "Docker", "MySQL"]}
-              screenshot="/screenshots/analyzer.png"
-            />
-          </Reveal>
+            <Reveal>
+              <ProjectCard
+                title="BME Diplomadolgozat"
+                description={t("projectAnalyzerDesc")}
+                href="https://analyzer.gbakos.hu"
+                image="/reddit_analyzer.png"
+                tech={[
+                  "React",
+                  "TypeScript",
+                  "Material UI",
+                  "WebSocket",
+                  "C#",
+                  ".NET Core",
+                  "ASP.NET Core",
+                  "REST API",
+                  "Python",
+                  "BeautifulSoup",
+                  "Sentiment analysis",
+                  "Ollama",
+                  "LM Studio",
+                  "LLM-ek",
+                  "RabbitMQ",
+                  "MySQL",
+                  "phpMyAdmin",
+                  "Docker",
+                  "Reddit",
+                  "YouTube",
+                  "Stack Overflow",
+                  "Google Reviews",
+                  "X (Twitter)",
+                  "Gyakori kerdesek",
+                ]}
+                screenshot="/screenshots/analyzer.png"
+              />
+            </Reveal>
           <Reveal>
             <ProjectCard
               title="Weather App"
