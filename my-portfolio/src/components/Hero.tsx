@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
       <section className="hero">
         <div className="hero-content">
           <p className="hero-eyebrow">{t("heroEyebrow")}</p>
-          <h2>Bakos Gergo</h2>
+          <h2>Bakos Gergő</h2>
           <p className="hero-lead">
             Budapest • BME VIK Computer Engineering BSc (2022–). Gyakorlatorientalt
             webfejlesztes, fokuszban a reszponziv UI, stabil API-k es jo

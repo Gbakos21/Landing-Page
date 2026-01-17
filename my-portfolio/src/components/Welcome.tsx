@@ -12,7 +12,7 @@ const Welcome: React.FC = () => {
   return (
     <section className="welcome">
       <div className="welcome-inner">
-        <p className="welcome-eyebrow">Bakos Gergo</p>
+        <p className="welcome-eyebrow">Bakos Gergő</p>
         <h1 className="welcome-title">{t("welcomeTitle")}</h1>
         <div className="welcome-glow" aria-hidden="true" />
       </div>
