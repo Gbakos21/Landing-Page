@@ -1,6 +1,7 @@
 import React from "react";
 import { useI18n } from "../i18n/I18nProvider";
 import techKey from "../utils/techColor";
+import { trackDownload } from "../utils/analytics";
 
 const Hero: React.FC = () => {
   const { t } = useI18n();
@@ -14,7 +15,12 @@ const Hero: React.FC = () => {
           <p className="hero-lead">{t("heroLead1")}</p>
           <p className="hero-lead">{t("heroLead2")}</p>
           <div className="hero-actions">
-            <a className="action-button" href="/CV-Bakos_Gergo.pdf" download>
+            <a
+              className="action-button"
+              href="/CV-Bakos_Gergo.pdf"
+              download
+              onClick={() => trackDownload("CV-Bakos_Gergo.pdf", "/CV-Bakos_Gergo.pdf")}
+            >
               {t("heroCtaCv")}
               <span className="download-icon" aria-hidden="true" />
             </a>
@@ -70,14 +76,14 @@ const Hero: React.FC = () => {
         </div>
         <div className="hero-accent">
           <div className="accent-card accent-card--languages">
-            <span className="accent-title">Nyelvtudás</span>
+            <span className="accent-title">{t("languageTitle")}</span>
             <div className="lang-levels">
               <div className="lang-row" data-lang="hu">
                 <div className="lang-info">
-                  <span className="lang-name">Magyar</span>
-                  <span className="lang-level">Native</span>
+                  <span className="lang-name">{t("languageHu")}</span>
+                  <span className="lang-level">{t("languageLevelNative")}</span>
                 </div>
-                <div className="lang-dots" aria-label="Magyar szint: 5/5">
+                <div className="lang-dots" aria-label={t("languageHuAria")}>
                   <span className="lang-dot is-on" />
                   <span className="lang-dot is-on" />
                   <span className="lang-dot is-on" />
@@ -87,10 +93,10 @@ const Hero: React.FC = () => {
               </div>
               <div className="lang-row" data-lang="en">
                 <div className="lang-info">
-                  <span className="lang-name">Angol</span>
-                  <span className="lang-level">B2</span>
+                  <span className="lang-name">{t("languageEn")}</span>
+                  <span className="lang-level">{t("languageLevelB2")}</span>
                 </div>
-                <div className="lang-dots" aria-label="Angol szint: 3/5">
+                <div className="lang-dots" aria-label={t("languageEnAria")}>
                   <span className="lang-dot is-on" />
                   <span className="lang-dot is-on" />
                   <span className="lang-dot is-on" />
@@ -100,10 +106,10 @@ const Hero: React.FC = () => {
               </div>
               <div className="lang-row" data-lang="de">
                 <div className="lang-info">
-                  <span className="lang-name">Német</span>
-                  <span className="lang-level">Hobby</span>
+                  <span className="lang-name">{t("languageDe")}</span>
+                  <span className="lang-level">{t("languageLevelHobby")}</span>
                 </div>
-                <div className="lang-dots" aria-label="Német szint: 1/5">
+                <div className="lang-dots" aria-label={t("languageDeAria")}>
                   <span className="lang-dot is-on" />
                   <span className="lang-dot" />
                   <span className="lang-dot" />
@@ -114,27 +120,27 @@ const Hero: React.FC = () => {
             </div>
           </div>
           <div className="accent-card accent-card--certs is-alt">
-            <span className="accent-title">Végzettségek és tanúsítványok</span>
+            <span className="accent-title">{t("certTitle")}</span>
             <ul className="cert-list">
               <li>
                 <span className="cert-icon" aria-hidden="true">🎓</span>
-                BME VIK Mérnökinformatikus BSc diploma
+                {t("certBme")}
               </li>
               <li>
                 <span className="cert-icon" aria-hidden="true">🖧</span>
-                Hálózattervező technikus és rendszergazdai technikus
+                {t("certNetwork")}
               </li>
               <li>
                 <span className="cert-icon" aria-hidden="true">🧾</span>
-                Europass - Computer system and application operation technician
+                {t("certEuropass")}
               </li>
               <li>
                 <span className="cert-icon" aria-hidden="true">🚗</span>
-                Driver License
+                {t("certDriver")}
               </li>
               <li>
                 <span className="cert-icon" aria-hidden="true">🛟</span>
-                International certificate for operators of pleasure craft
+                {t("certBoat")}
               </li>
             </ul>
           </div>

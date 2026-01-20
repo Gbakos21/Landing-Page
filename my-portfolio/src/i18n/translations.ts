@@ -35,7 +35,23 @@ export type TranslationKey =
   | "projectZorkaDesc"
   | "projectFeladatDesc"
   | "projectPlazaDesc"
-  | "projectWebshopDesc";
+  | "projectWebshopDesc"
+  | "languageTitle"
+  | "languageHu"
+  | "languageEn"
+  | "languageDe"
+  | "languageLevelNative"
+  | "languageLevelB2"
+  | "languageLevelHobby"
+  | "languageHuAria"
+  | "languageEnAria"
+  | "languageDeAria"
+  | "certTitle"
+  | "certBme"
+  | "certNetwork"
+  | "certEuropass"
+  | "certDriver"
+  | "certBoat";
 
 export const translations: Record<Language, Record<TranslationKey, string>> = {
   hu: {
@@ -84,6 +100,22 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "Ez a weboldal egy hálózatos technikusi vizsgaremek kisebb részeként készült. A feladat során egy Debrecenben található pláza hálózatának megtervezése volt a cél, amelyhez egy egyszerű, statikus weboldalt kellett készíteni. Az oldal arra szolgált, hogy bemutassa: a saját webszerveren futó weboldal DNS-néven keresztül, böngészőből elérhető, így igazolva a hálózati szolgáltatások helyes működését a tervezett környezetben.",
     projectWebshopDesc:
       "Ez a projekt az ekiegeszitok.hu számára készült gyakorlati megoldás volt, ahol a feladat az volt, hogy több tízezer soros, angol nyelvű Excel termékadatokat automatizált módon magyarra fordítsak. A cél egy olyan script készítése volt, amely ChatGPT API-t használva végzi a fordítást, miközben figyel a márkanevek és terméknevek védelmére, a HTML-tartalom megőrzésére, a duplikációk kiszűrésére, valamint a stabil hibakezelésre. A megoldás grafikus felülettel rendelkezik, támogatja a nagy fájlokat, párhuzamos feldolgozást alkalmaz, és biztonságosan kezeli az API-kulcsot.",
+    languageTitle: "Nyelvtudás",
+    languageHu: "Magyar",
+    languageEn: "Angol",
+    languageDe: "Német",
+    languageLevelNative: "Anyanyelv",
+    languageLevelB2: "B2",
+    languageLevelHobby: "Hobbi",
+    languageHuAria: "Magyar szint: 5/5",
+    languageEnAria: "Angol szint: 3/5",
+    languageDeAria: "Német szint: 1/5",
+    certTitle: "Végzettségek és tanúsítványok",
+    certBme: "BME VIK Mérnökinformatikus BSc diploma",
+    certNetwork: "Hálózattervező technikus és rendszergazdai technikus",
+    certEuropass: "Europass - Computer system and application operation technician",
+    certDriver: "Vezetői engedély",
+    certBoat: "Nemzetközi kedvtelési célú kishajó-vezetői tanúsítvány",
   },
   en: {
     navPortfolio: "Portfolio",
@@ -131,6 +163,22 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "This website was created as a small part of a networking technician exam project. The task was to design the network of a shopping mall in Debrecen and build a simple static website. The site demonstrated that a website hosted on a private server is reachable via DNS from a browser, validating the network services in the planned environment.",
     projectWebshopDesc:
       "A practical solution built for ekiegeszitok.hu, where the task was to automatically translate tens of thousands of English Excel product rows into Hungarian. The goal was a script using the ChatGPT API while protecting brand and product names, preserving HTML content, removing duplicates, and handling errors robustly. The solution includes a GUI, supports large files, runs parallel processing, and safely manages the API key.",
+    languageTitle: "Languages",
+    languageHu: "Hungarian",
+    languageEn: "English",
+    languageDe: "German",
+    languageLevelNative: "Native",
+    languageLevelB2: "B2",
+    languageLevelHobby: "Hobby",
+    languageHuAria: "Hungarian level: 5/5",
+    languageEnAria: "English level: 3/5",
+    languageDeAria: "German level: 1/5",
+    certTitle: "Education & Certificates",
+    certBme: "BME VIK Computer Engineering BSc diploma",
+    certNetwork: "Network design technician and system administrator technician",
+    certEuropass: "Europass - Computer system and application operation technician",
+    certDriver: "Driver license",
+    certBoat: "International certificate for operators of pleasure craft",
   },
   de: {
     navPortfolio: "Portfolio",
@@ -178,5 +226,21 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "Diese Website entstand als kleiner Teil einer Abschlussarbeit fuer Netzwerk-Techniker. Aufgabe war die Planung des Netzwerks eines Einkaufszentrums in Debrecen und der Bau einer einfachen statischen Website. Die Seite zeigte, dass eine auf einem eigenen Server gehostete Website ueber DNS im Browser erreichbar ist und damit die Netzwerkdienste im geplanten Umfeld korrekt funktionieren.",
     projectWebshopDesc:
       "Eine praktische Loesung fuer ekiegeszitok.hu: Aufgabe war die automatische Uebersetzung zehntausender englischer Excel-Produktdaten ins Ungarische. Ziel war ein Script mit ChatGPT-API, das Markennamen schuetzt, HTML beibehAlt, Duplikate entfernt und Fehler robust behandelt. Die Loesung bietet eine GUI, unterstuetzt grosse Dateien, nutzt Parallelisierung und verwaltet den API-Schluessel sicher.",
+    languageTitle: "Sprachen",
+    languageHu: "Ungarisch",
+    languageEn: "Englisch",
+    languageDe: "Deutsch",
+    languageLevelNative: "Muttersprache",
+    languageLevelB2: "B2",
+    languageLevelHobby: "Hobby",
+    languageHuAria: "Ungarisch Niveau: 5/5",
+    languageEnAria: "Englisch Niveau: 3/5",
+    languageDeAria: "Deutsch Niveau: 1/5",
+    certTitle: "Abschluesse und Zertifikate",
+    certBme: "BME VIK Informatikingenieur BSc Abschluss",
+    certNetwork: "Netzwerkplaner und Systemadministrator Techniker",
+    certEuropass: "Europass - Computer system and application operation technician",
+    certDriver: "Fuehrerschein",
+    certBoat: "Internationales Zertifikat fuer Freizeitbootfuehrer",
   },
 };

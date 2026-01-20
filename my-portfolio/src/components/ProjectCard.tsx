@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useI18n } from "../i18n/I18nProvider";
 import techKey from "../utils/techColor";
+import { trackDownload, trackLinkClick } from "../utils/analytics";
 
 export type ProjectCardProps = {
   title: string;
@@ -74,6 +75,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         )
       : null;
 
+  const handleClick = () => {
+    if (download) {
+      trackDownload(title, href);
+      return;
+    }
+    trackLinkClick(title, href);
+  };
+
   return (
     <article className="card">
       <div className="card-grid">
@@ -100,6 +109,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             rel={rel}
             aria-label={ariaLabel}
             download={download ? "" : undefined}
+            onClick={handleClick}
           >
             {label}
             <span
