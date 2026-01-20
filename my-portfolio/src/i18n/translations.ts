@@ -11,6 +11,15 @@ export type TranslationKey =
   | "heroLead2"
   | "heroCtaCv"
   | "heroCtaProjects"
+  | "heroTechFrontend"
+  | "heroTechBackend"
+  | "heroTechOther"
+  | "heroAccentStackTitle"
+  | "heroAccentStackValue"
+  | "heroAccentStackMeta"
+  | "heroAccentFocusTitle"
+  | "heroAccentFocusValue"
+  | "heroAccentFocusMeta"
   | "welcomeTitle"
   | "welcomeArrow"
   | "openProject"
@@ -34,24 +43,33 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     navProjects: "Projektek",
     navLanguageHu: "Magyar",
     navLanguageEn: "Angol",
-    navLanguageDe: "Nemet",
-    heroEyebrow: "Frontend developer / Full-stack projects",
+    navLanguageDe: "Német",
+    heroEyebrow: "Frontend fejlesztő / Full-stack projektek",
     heroLead1:
-      "BME VIK-es mernokinformatikuskent vegeztem, es mar tobb csapatprojektben is bizonyitottam. Reacttal 1 ev tapasztalatom van, HTML + CSS-ben 4-5 evet dolgoztam, ezert szivesen epitek letisztult, gyors es megbizhato feluleteket.",
+      "BME VIK-es mérnökinformatikusként végeztem, és már több csapatprojektben is bizonyítottam. Reacttal 1 év tapasztalatom van, HTML + CSS-ben 4-5 évet dolgoztam, ezért szívesen építek letisztult, gyors és megbízható felületeket.",
     heroLead2:
-      "A celom, hogy a design elegans legyen, a hasznalat pedig egyszeru es magatol ertetodo. Olyan termekeket keszitek, amelyek nemcsak szep, hanem hasznos elmenyt is adnak.",
-    heroCtaCv: "Oneletrajz letoltes",
+      "A célom, hogy a design elegáns legyen, a használat pedig egyszerű és magától értetődő. Olyan termékeket készítek, amelyek nemcsak szépek, hanem hasznos élményt is adnak.",
+    heroCtaCv: "Önéletrajz letöltése",
     heroCtaProjects: "Projektek",
+    heroTechFrontend: "Frontend",
+    heroTechBackend: "Backend / Data",
+    heroTechOther: "Egyéb",
+    heroAccentStackTitle: "Stack",
+    heroAccentStackValue: "React / TypeScript / .NET / MUI",
+    heroAccentStackMeta: "Frontend / API / Data",
+    heroAccentFocusTitle: "Fókusz",
+    heroAccentFocusValue: "Reszponzív UI / UX szemlélet",
+    heroAccentFocusMeta: "Gyors, stabil megoldások",
     welcomeTitle: "Portfolio",
-    welcomeArrow: "Ugras a hero szekciora",
-    openProject: "Megnyitas",
-    openProjectLabel: "Projekt megnyitasa",
-    openImageLabel: "Screenshot nagyitasa",
-    closeLabel: "Bezaras",
-    downloadLabel: "Letoltes",
-    downloadAriaLabel: "letoltese",
+    welcomeArrow: "Ugrás a hero szekcióra",
+    openProject: "Megnyitás",
+    openProjectLabel: "Projekt megnyitása",
+    openImageLabel: "Képernyőkép nagyítása",
+    closeLabel: "Bezárás",
+    downloadLabel: "Letöltés",
+    downloadAriaLabel: "letöltése",
     projectSmurfDesc:
-      "Egy full-stack miniapp, amely törpök (Smurfs) adatait jeleníti meg áttekintő statisztikákkal, listákkal és részletes nézetekkel. Frontend: React + TypeScript, Material UI, MUI X chart, React Router; reszponzív felület és dark mode. Backend: ASP.NET Core Web API.",
+      "Egy full-stack miniapp, amely a törpök (Smurfs) adatait jeleníti meg áttekintő statisztikákkal, listákkal és részletes nézetekkel. Frontend: React + TypeScript, Material UI, MUI X chart, React Router; reszponzív felület és dark mode. Backend: ASP.NET Core Web API.",
     projectAnalyzerDesc:
       "Ez a projekt egy webes alkalmazás, amely különböző közösségi platformokról (például Reddit, Google Reviews, X/Twitter, YouTube) származó kommentek automatikus begyűjtését és mesterséges intelligencián alapuló hangulatelemzését végzi. A rendszer a háttérben párhuzamos feldolgozással, üzenetsorok segítségével dolgozza fel a nagy mennyiségű szöveges adatot, majd az eredményeket adatbázisban tárolja és valós időben jeleníti meg egy modern, reszponzív webes felületen grafikonok és statisztikák formájában.",
     projectWeatherDesc:
@@ -61,7 +79,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     projectZorkaDesc:
       "Ez a projekt egy baráti, hobbi jellegű webes játék, amelyet egy barátom számára készítettem. Az alkalmazás lényege, hogy a felhasználó feltöltheti a kutyájáról készült képeket, majd ezekkel különböző játékokat játszhat. A projekt két fő részből áll: egy memory párosító játékból és egy kirakó (puzzle) játékból, több nehézségi szinttel. A játékok mobilbarátok, hanghatásokat használnak, és a haladás, illetve a feltöltött képek automatikusan mentésre kerülnek a böngészőben.",
     projectFeladatDesc:
-      "Ez a projekt a BME-n a „Design a szoftvertervezésben” című tárgy keretében készült. A feladat célja egy olyan alkalmazás megtervezése és megvalósítása volt, amely előre meghatározott UX elvek és funkcionális specifikációk alapján készül. A projekt során kiemelt szerepet kapott a felhasználói élmény, az átlátható feladatkezelés, valamint a reszponzív és következetes felület kialakítása. Az elkészült alkalmazás egy feladatkezelő rendszer, amely támogatja a határidők, prioritások, típusok kezelését, értesítéseket, valamint a világos–sötét téma közötti váltást.",
+      "Ez a projekt a BME-n a \"Design a szoftvertervezésben\" című tárgy keretében készült. A feladat célja egy olyan alkalmazás megtervezése és megvalósítása volt, amely előre meghatározott UX elvek és funkcionális specifikációk alapján készül. A projekt során kiemelt szerepet kapott a felhasználói élmény, az átlátható feladatkezelés, valamint a reszponzív és következetes felület kialakítása. Az elkészült alkalmazás egy feladatkezelő rendszer, amely támogatja a határidők, prioritások, típusok kezelését, értesítéseket, valamint a világos/sötét téma közötti váltást.",
     projectPlazaDesc:
       "Ez a weboldal egy hálózatos technikusi vizsgaremek kisebb részeként készült. A feladat során egy Debrecenben található pláza hálózatának megtervezése volt a cél, amelyhez egy egyszerű, statikus weboldalt kellett készíteni. Az oldal arra szolgált, hogy bemutassa: a saját webszerveren futó weboldal DNS-néven keresztül, böngészőből elérhető, így igazolva a hálózati szolgáltatások helyes működését a tervezett környezetben.",
     projectWebshopDesc:
@@ -80,6 +98,15 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "My goal is elegant design and a simple, intuitive experience. I build products that look good and feel great to use.",
     heroCtaCv: "Download CV",
     heroCtaProjects: "Projects",
+    heroTechFrontend: "Frontend",
+    heroTechBackend: "Backend / Data",
+    heroTechOther: "Sonstiges",
+    heroAccentStackTitle: "Stack",
+    heroAccentStackValue: "React / TypeScript / .NET / MUI",
+    heroAccentStackMeta: "Frontend / API / Data",
+    heroAccentFocusTitle: "Fokus",
+    heroAccentFocusValue: "Responsive UI / UX Fokus",
+    heroAccentFocusMeta: "Schnelle, stabile Loesungen",
     welcomeTitle: "Portfolio",
     welcomeArrow: "Jump to hero section",
     openProject: "Open",
@@ -99,7 +126,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     projectZorkaDesc:
       "A friendly hobby project I built for a friend. Users can upload photos of their dog and play different games with them. The project has two main parts: a memory matching game and a puzzle game with multiple difficulty levels. The games are mobile-friendly, include sound effects, and progress plus uploaded images are saved in the browser.",
     projectFeladatDesc:
-      "This project was developed at BME for the course “Design in Software Design”. The goal was to design and implement an application based on predefined UX principles and functional specifications. The project emphasized user experience, clear task management, and a responsive, consistent UI. The result is a task manager supporting deadlines, priorities, types, notifications, and a light/dark theme switch.",
+      "This project was developed at BME for the course ƒ?oDesign in Software Designƒ??. The goal was to design and implement an application based on predefined UX principles and functional specifications. The project emphasized user experience, clear task management, and a responsive, consistent UI. The result is a task manager supporting deadlines, priorities, types, notifications, and a light/dark theme switch.",
     projectPlazaDesc:
       "This website was created as a small part of a networking technician exam project. The task was to design the network of a shopping mall in Debrecen and build a simple static website. The site demonstrated that a website hosted on a private server is reachable via DNS from a browser, validating the network services in the planned environment.",
     projectWebshopDesc:
@@ -118,6 +145,15 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "Mein Ziel ist ein elegantes Design und eine einfache, intuitive Nutzung. Ich baue Produkte, die gut aussehen und sich gut anfuehlen.",
     heroCtaCv: "Lebenslauf herunterladen",
     heroCtaProjects: "Projekte",
+    heroTechFrontend: "Frontend",
+    heroTechBackend: "Backend / Data",
+    heroTechOther: "Other",
+    heroAccentStackTitle: "Stack",
+    heroAccentStackValue: "React / TypeScript / .NET / MUI",
+    heroAccentStackMeta: "Frontend / API / Data",
+    heroAccentFocusTitle: "Focus",
+    heroAccentFocusValue: "Responsive UI / UX mindset",
+    heroAccentFocusMeta: "Fast, stable solutions",
     welcomeTitle: "Portfolio",
     welcomeArrow: "Zum Hero-Bereich springen",
     openProject: "Oeffnen",
@@ -137,10 +173,10 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     projectZorkaDesc:
       "Ein freundschaftliches Hobbyprojekt, das ich fuer einen Freund gebaut habe. Nutzer koennen Fotos ihres Hundes hochladen und damit verschiedene Spiele spielen. Das Projekt besteht aus zwei Teilen: einem Memory-Spiel und einem Puzzle mit mehreren Schwierigkeitsstufen. Die Spiele sind mobilfreundlich, nutzen Soundeffekte und speichern Fortschritt sowie Bilder im Browser.",
     projectFeladatDesc:
-      "Dieses Projekt entstand an der BME im Kurs „Design in der Softwaregestaltung“. Ziel war die Konzeption und Umsetzung einer Anwendung auf Basis vorgegebener UX-Prinzipien und funktionaler Spezifikationen. Im Fokus standen Nutzererlebnis, klare Aufgabenverwaltung sowie eine responsive und konsistente UI. Das Ergebnis ist ein Aufgabenmanager mit Deadlines, Prioritaeten, Typen, Benachrichtigungen und Hell/Dunkel-Modus.",
+      "Dieses Projekt entstand an der BME im Kurs ƒ?zDesign in der Softwaregestaltungƒ?o. Ziel war die Konzeption und Umsetzung einer Anwendung auf Basis vorgegebener UX-Prinzipien und funktionaler Spezifikationen. Im Fokus standen Nutzererlebnis, klare Aufgabenverwaltung sowie eine responsive und konsistente UI. Das Ergebnis ist ein Aufgabenmanager mit Deadlines, Prioritaeten, Typen, Benachrichtigungen und Hell/Dunkel-Modus.",
     projectPlazaDesc:
       "Diese Website entstand als kleiner Teil einer Abschlussarbeit fuer Netzwerk-Techniker. Aufgabe war die Planung des Netzwerks eines Einkaufszentrums in Debrecen und der Bau einer einfachen statischen Website. Die Seite zeigte, dass eine auf einem eigenen Server gehostete Website ueber DNS im Browser erreichbar ist und damit die Netzwerkdienste im geplanten Umfeld korrekt funktionieren.",
     projectWebshopDesc:
-      "Eine praktische Loesung fuer ekiegeszitok.hu: Aufgabe war die automatische Uebersetzung zehntausender englischer Excel-Produktdaten ins Ungarische. Ziel war ein Script mit ChatGPT-API, das Markennamen schuetzt, HTML beibehält, Duplikate entfernt und Fehler robust behandelt. Die Loesung bietet eine GUI, unterstuetzt grosse Dateien, nutzt Parallelisierung und verwaltet den API-Schluessel sicher.",
+      "Eine praktische Loesung fuer ekiegeszitok.hu: Aufgabe war die automatische Uebersetzung zehntausender englischer Excel-Produktdaten ins Ungarische. Ziel war ein Script mit ChatGPT-API, das Markennamen schuetzt, HTML beibehAlt, Duplikate entfernt und Fehler robust behandelt. Die Loesung bietet eine GUI, unterstuetzt grosse Dateien, nutzt Parallelisierung und verwaltet den API-Schluessel sicher.",
   },
 };

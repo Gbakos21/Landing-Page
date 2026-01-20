@@ -10,18 +10,9 @@ const Hero: React.FC = () => {
       <section className="hero">
         <div className="hero-content">
           <p className="hero-eyebrow">{t("heroEyebrow")}</p>
-          <h2>Bakos Gergő</h2>
-          <p className="hero-lead">
-            Budapest • BME VIK Computer Engineering BSc (2022–). Gyakorlatorientalt
-            webfejlesztes, fokuszban a reszponziv UI, stabil API-k es jo
-            felhasznaloi elmeny. Summer intern tapasztalat RolandIT-nel es
-            Webforyoukft-nel.
-          </p>
-          <p className="hero-lead">
-            Szivesen dolgozom modern frontend stackkel, es szeretem a
-            strukturalt, letisztult feluleteket. Nyitott vagyok uj technologiak
-            gyors elsajatitasara es csapatmunkara.
-          </p>
+          <h2>Bakos Gergo</h2>
+          <p className="hero-lead">{t("heroLead1")}</p>
+          <p className="hero-lead">{t("heroLead2")}</p>
           <div className="hero-actions">
             <a className="action-button" href="/CV-Bakos_Gergo.pdf" download>
               {t("heroCtaCv")}
@@ -34,7 +25,7 @@ const Hero: React.FC = () => {
           </div>
           <div className="hero-tech">
             <div className="tech-card">
-              <span className="tech-title">Frontend</span>
+              <span className="tech-title">{t("heroTechFrontend")}</span>
               <div className="tech-list">
                 <span className="tech-chip" data-tech={techKey("React")}>React</span>
                 <span className="tech-chip" data-tech={techKey("TypeScript")}>TypeScript</span>
@@ -47,7 +38,7 @@ const Hero: React.FC = () => {
               </div>
             </div>
             <div className="tech-card">
-              <span className="tech-title">Backend / Data</span>
+              <span className="tech-title">{t("heroTechBackend")}</span>
               <div className="tech-list">
                 <span className="tech-chip" data-tech={techKey(".NET C#")}>.NET C#</span>
                 <span className="tech-chip" data-tech={techKey("RabbitMQ")}>RabbitMQ</span>
@@ -59,7 +50,7 @@ const Hero: React.FC = () => {
               </div>
             </div>
             <div className="tech-card">
-              <span className="tech-title">Other</span>
+              <span className="tech-title">{t("heroTechOther")}</span>
               <div className="tech-list">
                 <span className="tech-chip" data-tech={techKey("Cisco Networking")}>Cisco Networking</span>
                 <span className="tech-chip" data-tech={techKey("CMS Sanity")}>CMS (Sanity)</span>
@@ -79,14 +70,14 @@ const Hero: React.FC = () => {
         </div>
         <div className="hero-accent">
           <div className="accent-card">
-            <span className="accent-title">Stack</span>
-            <span className="accent-value">React • TypeScript • .NET • MUI</span>
-            <span className="accent-meta">Frontend • API • Data</span>
+            <span className="accent-title">{t("heroAccentStackTitle")}</span>
+            <span className="accent-value">{t("heroAccentStackValue")}</span>
+            <span className="accent-meta">{t("heroAccentStackMeta")}</span>
           </div>
           <div className="accent-card is-alt">
-            <span className="accent-title">Focus</span>
-            <span className="accent-value">Reszponziv UI • UX szemlelet</span>
-            <span className="accent-meta">Gyors, stabil megoldasok</span>
+            <span className="accent-title">{t("heroAccentFocusTitle")}</span>
+            <span className="accent-value">{t("heroAccentFocusValue")}</span>
+            <span className="accent-meta">{t("heroAccentFocusMeta")}</span>
           </div>
         </div>
       </section>

@@ -2,12 +2,136 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9R07MPQNP0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("consent", "default", { analytics_storage: "denied" });
+    </script>
+    <style>
+      .cookie-banner {
+        position: fixed;
+        left: 50%;
+        right: auto;
+        bottom: 16px;
+        z-index: 1000;
+        display: none;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        width: min(960px, calc(100% - 32px));
+        transform: translateX(-50%);
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(12, 14, 20, 0.92);
+        color: #f8f7f4;
+        font-family: "Manrope", sans-serif;
+        box-shadow: 0 12px 30px rgba(6, 8, 16, 0.4);
+      }
+
+      .cookie-banner__text {
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .cookie-banner__actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .cookie-banner__button {
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.1);
+        color: inherit;
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+      }
+
+      .cookie-banner__button.is-primary {
+        background: linear-gradient(135deg, rgba(88, 222, 255, 0.85), rgba(255, 171, 128, 0.85));
+        color: #0b0d12;
+        border-color: rgba(255, 255, 255, 0.5);
+        font-weight: 700;
+      }
+
+      @media (max-width: 720px) {
+        .cookie-banner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
     <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
   </head>
   <body>
     <div id="root"></div>
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite">
+      <div class="cookie-banner__text">
+        Ez az oldal sütiket hasznal a latogatasi statisztikak (GA4) meresehez.
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="cookie-banner__button is-primary" id="cookie-accept" type="button">
+          Elfogadom
+        </button>
+        <button class="cookie-banner__button" id="cookie-decline" type="button">
+          Elutasitom
+        </button>
+      </div>
+    </div>
+    <script>
+      const banner = document.getElementById("cookie-banner");
+      const acceptButton = document.getElementById("cookie-accept");
+      const declineButton = document.getElementById("cookie-decline");
+
+      const setBannerState = (isOpen) => {
+        if (isOpen) {
+          banner.style.display = "flex";
+          document.body.classList.add("cookie-banner-open");
+        } else {
+          banner.style.display = "none";
+          document.body.classList.remove("cookie-banner-open");
+        }
+      };
+
+      const enableAnalytics = () => {
+        if (typeof gtag === "function") {
+          gtag("consent", "update", { analytics_storage: "granted" });
+          gtag("config", "G-9R07MPQNP0");
+        }
+      };
+
+      const savedConsent = localStorage.getItem("ga-consent");
+      if (savedConsent === "granted") {
+        enableAnalytics();
+      } else if (savedConsent === "denied") {
+        // keep analytics disabled
+      } else {
+        setBannerState(true);
+      }
+
+      acceptButton.addEventListener("click", () => {
+        localStorage.setItem("ga-consent", "granted");
+        enableAnalytics();
+        setBannerState(false);
+      });
+
+      declineButton.addEventListener("click", () => {
+        localStorage.setItem("ga-consent", "denied");
+        if (typeof gtag === "function") {
+          gtag("consent", "update", { analytics_storage: "denied" });
+        }
+        setBannerState(false);
+      });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
