@@ -379,6 +379,11 @@ body.no-scroll {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+.nav.is-open .nav-toggle .chev {
+  transform: translateY(2px) rotate(-135deg);
+  opacity: 1;
+}
+
 .lang-select.is-open .chev {
   transform: translateY(-2px) rotate(-135deg);
   opacity: 1;
@@ -575,8 +580,21 @@ body.no-scroll {
     transform: translate(-50%, -6px);
   }
 
-  .lang-select:hover .lang-menu,
-  .lang-select:focus-within .lang-menu {
+  .lang-select:hover:not(.is-open) .lang-menu,
+  .lang-select:focus-within:not(.is-open) .lang-menu {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -6px);
+  }
+
+  .lang-select:focus-within:not(.is-open) .chev {
+    transform: translateY(-2px) rotate(45deg);
+    opacity: 0.7;
+  }
+
+  .lang-select.is-open .lang-menu {
+    opacity: 1;
+    pointer-events: auto;
     transform: translate(-50%, 0);
   }
 

@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
       <section className="hero">
         <div className="hero-content">
           <p className="hero-eyebrow">{t("heroEyebrow")}</p>
-          <h2>Bakos Gergo</h2>
+          <h2>Bakos Gergő</h2>
           <p className="hero-lead">{t("heroLead1")}</p>
           <p className="hero-lead">{t("heroLead2")}</p>
           <div className="hero-actions">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import smoothScrollToId from "../utils/smoothScrollTo";
 import { useI18n } from "../i18n/I18nProvider";
 import type { Language } from "../i18n/translations";
@@ -9,6 +9,7 @@ const Navbar: React.FC = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isLightMode, setIsLightMode] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement | null>(null);
   const { language, setLanguage, t } = useI18n();
 
   useEffect(() => {
@@ -65,6 +66,37 @@ const Navbar: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!isLangOpen) {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!langRef.current?.contains(event.target as Node)) {
+        setIsLangOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsLangOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isLangOpen]);
+
+  useEffect(() => {
+    if (!isMobileOpen) {
+      setIsLangOpen(false);
+    }
+  }, [isMobileOpen]);
+
   const handleNavClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
     id: string
@@ -105,9 +137,7 @@ const Navbar: React.FC = () => {
               aria-expanded={isMobileOpen}
               onClick={() => setIsMobileOpen((prev) => !prev)}
             >
-              <span className="chev" aria-hidden="true">
-                v
-              </span>
+              <span className="chev" aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -124,11 +154,7 @@ const Navbar: React.FC = () => {
           </button>
           <div
             className={`lang-select${isLangOpen ? " is-open" : ""}`}
-            onBlur={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-                setIsLangOpen(false);
-              }
-            }}
+            ref={langRef}
           >
             <button
               className="lang-button"
