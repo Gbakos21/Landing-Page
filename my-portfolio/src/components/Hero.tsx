@@ -69,15 +69,74 @@ const Hero: React.FC = () => {
           </div>
         </div>
         <div className="hero-accent">
-          <div className="accent-card">
-            <span className="accent-title">{t("heroAccentStackTitle")}</span>
-            <span className="accent-value">{t("heroAccentStackValue")}</span>
-            <span className="accent-meta">{t("heroAccentStackMeta")}</span>
+          <div className="accent-card accent-card--languages">
+            <span className="accent-title">Nyelvtudás</span>
+            <div className="lang-levels">
+              <div className="lang-row" data-lang="hu">
+                <div className="lang-info">
+                  <span className="lang-name">Magyar</span>
+                  <span className="lang-level">Native</span>
+                </div>
+                <div className="lang-dots" aria-label="Magyar szint: 5/5">
+                  <span className="lang-dot is-on" />
+                  <span className="lang-dot is-on" />
+                  <span className="lang-dot is-on" />
+                  <span className="lang-dot is-on" />
+                  <span className="lang-dot is-on" />
+                </div>
+              </div>
+              <div className="lang-row" data-lang="en">
+                <div className="lang-info">
+                  <span className="lang-name">Angol</span>
+                  <span className="lang-level">B2</span>
+                </div>
+                <div className="lang-dots" aria-label="Angol szint: 3/5">
+                  <span className="lang-dot is-on" />
+                  <span className="lang-dot is-on" />
+                  <span className="lang-dot is-on" />
+                  <span className="lang-dot" />
+                  <span className="lang-dot" />
+                </div>
+              </div>
+              <div className="lang-row" data-lang="de">
+                <div className="lang-info">
+                  <span className="lang-name">Német</span>
+                  <span className="lang-level">Hobby</span>
+                </div>
+                <div className="lang-dots" aria-label="Német szint: 1/5">
+                  <span className="lang-dot is-on" />
+                  <span className="lang-dot" />
+                  <span className="lang-dot" />
+                  <span className="lang-dot" />
+                  <span className="lang-dot" />
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="accent-card is-alt">
-            <span className="accent-title">{t("heroAccentFocusTitle")}</span>
-            <span className="accent-value">{t("heroAccentFocusValue")}</span>
-            <span className="accent-meta">{t("heroAccentFocusMeta")}</span>
+          <div className="accent-card accent-card--certs is-alt">
+            <span className="accent-title">Végzettségek és tanúsítványok</span>
+            <ul className="cert-list">
+              <li>
+                <span className="cert-icon" aria-hidden="true">🎓</span>
+                BME VIK Mérnökinformatikus BSc diploma
+              </li>
+              <li>
+                <span className="cert-icon" aria-hidden="true">🖧</span>
+                Hálózattervező technikus és rendszergazdai technikus
+              </li>
+              <li>
+                <span className="cert-icon" aria-hidden="true">🧾</span>
+                Europass - Computer system and application operation technician
+              </li>
+              <li>
+                <span className="cert-icon" aria-hidden="true">🚗</span>
+                Driver License
+              </li>
+              <li>
+                <span className="cert-icon" aria-hidden="true">🛟</span>
+                International certificate for operators of pleasure craft
+              </li>
+            </ul>
           </div>
         </div>
       </section>
