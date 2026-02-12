@@ -30,6 +30,9 @@ export type TranslationKey =
   | "downloadAriaLabel"
   | "projectSmurfDesc"
   | "projectAnalyzerDesc"
+  | "projectConfigcobraDesc"
+  | "projectConfigcobraAppDesc"
+  | "projectDigitecholdDesc"
   | "projectWeatherDesc"
   | "projectPlaylistDesc"
   | "projectZorkaDesc"
@@ -88,6 +91,12 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "Egy full-stack miniapp, amely a törpök (Smurfs) adatait jeleníti meg áttekintő statisztikákkal, listákkal és részletes nézetekkel. Frontend: React + TypeScript, Material UI, MUI X chart, React Router; reszponzív felület és dark mode. Backend: ASP.NET Core Web API.",
     projectAnalyzerDesc:
       "Ez a projekt egy webes alkalmazás, amely különböző közösségi platformokról (például Reddit, Google Reviews, X/Twitter, YouTube) származó kommentek automatikus begyűjtését és mesterséges intelligencián alapuló hangulatelemzését végzi. A rendszer a háttérben párhuzamos feldolgozással, üzenetsorok segítségével dolgozza fel a nagy mennyiségű szöveges adatot, majd az eredményeket adatbázisban tárolja és valós időben jeleníti meg egy modern, reszponzív webes felületen grafikonok és statisztikák formájában.",
+    projectConfigcobraDesc:
+      "Ez a weboldal az app.configcobra SaaS alkalmazás marketing oldala, amelyet a Digitaltechnologies Kft. számára készítettem. A cél az volt, hogy a design szép és letisztult legyen, miközben a lehető legjobb SEO-teljesítményt érje el. Ennek érdekében az eredetileg statikus oldalt SSR-re alakítottam, és több SEO-optimalizáló eszközt használtam, például a beépített Lighthouse-t és az Ahrefs oldalát.",
+    projectConfigcobraAppDesc:
+      "Ez a projekt egy SaaS alkalmazás, amely Microsoft 365 / Entra tenantok biztonsági és megfelelőségi beállításait vizsgálja. A felhasználó bejelentkezik a Microsoft fiókjával, kiválasztja a releváns standardokat, majd a rendszer lefuttatja az ellenőrzést a tenanton. Az alkalmazás összesíti az eredményeket, megmutatja a megfelelt/nem megfelelt pontokat, részletezi az eltéréseket (misconfigurations), és dashboardon vizuálisan is bemutatja a státuszt és pontszámokat. Másfél évig vettem részt a Digitaltechnologies Kft.-nél vezető frontend programozóként: a frontend kód felügyelete az én feladatom volt, és a jelentős részét én írtam.",
+    projectDigitecholdDesc:
+      "Ezt a weboldalt a Digitechold Kft.-nek kellett elkészítenem. A portfóliójukat mutatja be, ami eléggé összetett. A projekt különlegessége, hogy rengeteg animációt és interaktív stílust tartalmaz, továbbá Sanity CMS rendszert használ a blogok kezelésére. A megoldás egy modern, Next.js 15 (App Router) alapú, TypeScriptes weboldal, ahol a statikus marketing oldalak és a dinamikus blog tartalmak egy kódbázisban élnek.",
     projectWeatherDesc:
       "Modern, reszponzív időjárás-app városnév vagy geolokáció alapján. OpenWeather API, üveg-hatású felület és dinamikus színátmenet. HTML5, CSS, Bootstrap, vanilla JS.",
     projectPlaylistDesc:
@@ -151,6 +160,12 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "A full-stack mini app that shows Smurfs data with overview stats, lists, and detailed views. Frontend: React + TypeScript, Material UI, MUI X charts, React Router; responsive UI and dark mode. Backend: ASP.NET Core Web API.",
     projectAnalyzerDesc:
       "A web app that collects comments from multiple platforms (e.g., Reddit, Google Reviews, X/Twitter, YouTube) and runs AI-based sentiment analysis. The system processes large volumes in parallel using message queues, stores results in a database, and shows them in real time with charts and stats in a modern, responsive UI.",
+    projectConfigcobraDesc:
+      "The marketing site for the app.configcobra SaaS product, built for Digitaltechnologies Kft. The goal was a clean, elegant design with the best possible SEO performance. I converted the original static site to SSR and used multiple SEO tools, including built-in Lighthouse audits and Ahrefs.",
+    projectConfigcobraAppDesc:
+      "A SaaS application that checks Microsoft 365 / Entra tenant security and compliance settings. Users sign in with Microsoft, select relevant standards, then the system audits the tenant, summarizes pass/fail items, details misconfigurations, and shows status and scores on dashboards. I worked on this for 1.5 years at Digitaltechnologies Kft. as lead frontend, supervising and building most of the frontend code.",
+    projectDigitecholdDesc:
+      "A modern, complex portfolio website for Digitechold Kft. with lots of animations and interactive styling. Built with Next.js 15 (App Router) and TypeScript, combining static marketing pages with dynamic blog content in one codebase. The blog is powered by Sanity CMS, and Sanity Studio is available under /admin.",
     projectWeatherDesc:
       "Modern, responsive weather app using city name or geolocation. OpenWeather API, glassmorphism UI, and dynamic gradients. HTML5, CSS, Bootstrap, vanilla JS.",
     projectPlaylistDesc:
@@ -214,6 +229,12 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "Eine Full-Stack-Mini-App mit Smurf-Daten: Uebersicht, Statistiken, Listen und Detailansichten. Frontend: React + TypeScript, Material UI, MUI X Charts, React Router; responsive UI und Dark Mode. Backend: ASP.NET Core Web API.",
     projectAnalyzerDesc:
       "Eine Web-App, die Kommentare von mehreren Plattformen (z. B. Reddit, Google Reviews, X/Twitter, YouTube) sammelt und KI-basierte Sentiment-Analysen durchfuehrt. Das System verarbeitet grosse Datenmengen parallel ueber Message Queues, speichert Ergebnisse in einer Datenbank und zeigt sie in Echtzeit mit Charts und Statistiken in einer modernen, responsiven UI.",
+    projectConfigcobraDesc:
+      "Die Marketing-Seite für die app.configcobra SaaS-Anwendung, erstellt für Digitaltechnologies Kft. Ziel war ein klares, elegantes Design mit bestmöglicher SEO-Performance. Ich habe die ursprünglich statische Seite auf SSR umgestellt und mehrere SEO-Tools genutzt, darunter Lighthouse und Ahrefs.",
+    projectConfigcobraAppDesc:
+      "Eine SaaS-Anwendung zur Prüfung von Microsoft 365 / Entra Tenant-Sicherheits- und Compliance-Einstellungen. Nutzer melden sich mit Microsoft an, wählen relevante Standards, und das System prüft den Tenant, fasst Pass/Fail zusammen, listet Misconfigurations und zeigt Status sowie Scores im Dashboard. Ich war 1,5 Jahre bei Digitaltechnologies Kft. als Lead-Frontend tätig und habe die Frontend-Codebasis betreut und größtenteils entwickelt.",
+    projectDigitecholdDesc:
+      "Eine moderne, komplexe Portfolio-Website für Digitechold Kft. mit vielen Animationen und interaktiven Stilen. Next.js 15 (App Router) mit TypeScript, das statische Marketingseiten und dynamische Blog-Inhalte in einer Codebasis vereint. Der Blog nutzt Sanity CMS, das Sanity Studio ist unter /admin erreichbar.",
     projectWeatherDesc:
       "Moderne, responsive Wetter-App mit Stadtname oder Geolocation. OpenWeather API, Glassmorphism UI und dynamische Verlaeufe. HTML5, CSS, Bootstrap, Vanilla JS.",
     projectPlaylistDesc:

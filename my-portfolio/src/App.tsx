@@ -85,6 +85,87 @@ const AppContent: React.FC = () => {
           </Reveal>
           <Reveal>
             <ProjectCard
+              title="Configcobra"
+              description={t("projectConfigcobraDesc")}
+              href="https://configcobra.com/"
+              image="/configcobra-logo.webp"
+              tech={[
+                "React",
+                "TypeScript",
+                "Vite",
+                "SSR (Vite + Express)",
+                "React Router",
+                "React Helmet Async",
+                "MUI",
+                "Emotion",
+                "Sanity (Portable Text + GROQ)",
+                "MSAL (Azure)",
+                "Axios",
+                "Lucide React",
+                "GA4",
+                "Google Tag Manager",
+                "Google Search Console",
+                "Microsoft Clarity",
+                "Formspree",
+                "EmailOctopus",
+              ]}
+              screenshot="/screenshots/configcobra.png"
+            />
+          </Reveal>
+          <Reveal>
+            <ProjectCard
+              title="ConfigCobra app"
+              description={t("projectConfigcobraAppDesc")}
+              href="https://app.configcobra.com/"
+              image="/kiscobra-rmbg.svg"
+              tech={[
+                "React",
+                "MSAL (Microsoft Entra)",
+                "Microsoft Graph API",
+                "Create React App",
+                "React Bootstrap",
+                "Bootstrap",
+                "Chart.js",
+                "react-chartjs-2",
+                "chartjs-plugin-datalabels",
+                "react-circular-progressbar",
+                "react-icons",
+                "MUI (Material UI)",
+                "Emotion",
+              ]}
+              screenshot="/screenshots/configcobra-app.png"
+            />
+          </Reveal>
+          <Reveal>
+            <ProjectCard
+              title="Digital technologies"
+              description={t("projectDigitecholdDesc")}
+              href="https://www.digitechold.com/"
+              image="/digitechold-logo.webp"
+              tech={[
+                "Next.js 15 (App Router)",
+                "React 19",
+                "TypeScript",
+                "Tailwind CSS",
+                "MUI (Material UI)",
+                "GSAP",
+                "Framer Motion",
+                "Lenis",
+                "Sanity CMS (Sanity Studio, @sanity/client, next-sanity)",
+                "GROQ",
+                "@portabletext/react",
+                "GA4",
+                "Google Tag Manager",
+                "Google Search Console",
+                "Formspree",
+                "Docker",
+                "ESLint",
+              ]}
+              screenshot="/screenshots/digitechold.png"
+            />
+          </Reveal>
+          <Reveal>
+            <ProjectCard
               title="Weather App"
               description={t("projectWeatherDesc")}
               href="https://weather.gbakos.hu"
