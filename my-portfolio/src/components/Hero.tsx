@@ -127,6 +127,10 @@ const Hero: React.FC = () => {
                 {t("certBme")}
               </li>
               <li>
+                <span className="cert-icon" aria-hidden="true">🧑‍💻</span>
+                {t("certCiscoDevasc")}
+              </li>
+              <li>
                 <span className="cert-icon" aria-hidden="true">🖧</span>
                 {t("certNetwork")}
               </li>

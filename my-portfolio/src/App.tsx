@@ -166,6 +166,29 @@ const AppContent: React.FC = () => {
           </Reveal>
           <Reveal>
             <ProjectCard
+              title="Klíma"
+              description={t("projectKlimaDesc")}
+              href="https://klima.gbakos.hu"
+              image="/klima-logo.svg"
+              tech={[
+                "Vite",
+                "React",
+                "React DOM",
+                "Tailwind CSS",
+                "PostCSS",
+                "Autoprefixer",
+                "Framer Motion",
+                "Lucide React",
+                "jsPDF",
+                "jsPDF-Autotable",
+                "html2canvas",
+                "ESLint",
+              ]}
+              screenshot="/screenshots/klima.png"
+            />
+          </Reveal>
+          <Reveal>
+            <ProjectCard
               title="Weather App"
               description={t("projectWeatherDesc")}
               href="https://weather.gbakos.hu"

@@ -33,6 +33,7 @@ export type TranslationKey =
   | "projectConfigcobraDesc"
   | "projectConfigcobraAppDesc"
   | "projectDigitecholdDesc"
+  | "projectKlimaDesc"
   | "projectWeatherDesc"
   | "projectPlaylistDesc"
   | "projectZorkaDesc"
@@ -54,7 +55,8 @@ export type TranslationKey =
   | "certNetwork"
   | "certEuropass"
   | "certDriver"
-  | "certBoat";
+  | "certBoat"
+  | "certCiscoDevasc";
 
 export const translations: Record<Language, Record<TranslationKey, string>> = {
   hu: {
@@ -97,6 +99,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "Ez a projekt egy SaaS alkalmazás, amely Microsoft 365 / Entra tenantok biztonsági és megfelelőségi beállításait vizsgálja. A felhasználó bejelentkezik a Microsoft fiókjával, kiválasztja a releváns standardokat, majd a rendszer lefuttatja az ellenőrzést a tenanton. Az alkalmazás összesíti az eredményeket, megmutatja a megfelelt/nem megfelelt pontokat, részletezi az eltéréseket (misconfigurations), és dashboardon vizuálisan is bemutatja a státuszt és pontszámokat. Másfél évig vettem részt a Digitaltechnologies Kft.-nél vezető frontend programozóként: a frontend kód felügyelete az én feladatom volt, és a jelentős részét én írtam.",
     projectDigitecholdDesc:
       "Ezt a weboldalt a Digitechold Kft.-nek kellett elkészítenem. A portfóliójukat mutatja be, ami eléggé összetett. A projekt különlegessége, hogy rengeteg animációt és interaktív stílust tartalmaz, továbbá Sanity CMS rendszert használ a blogok kezelésére. A megoldás egy modern, Next.js 15 (App Router) alapú, TypeScriptes weboldal, ahol a statikus marketing oldalak és a dinamikus blog tartalmak egy kódbázisban élnek.",
+    projectKlimaDesc:
+      "Ezt a weboldalt a Digital Technologies Kft. számára kellett elkészítenem, akiknek egyik profilja, hogy klímákkal is kereskednek. A bemutató egy B2B klímanagykereskedelmi landing, amely kifejezetten viszonteladók és kivitelezők igényeire fókuszál: kiemeli az AEVORIN split klímák előnyeit, a megbízható beszállítói hátteret, a volumenes rendelési lehetőségeket és a gyors logisztikát raktárról vagy konténerben. A tartalom bemutatja a kiemelt modellt és annak fő specifikációit, hangsúlyozza a halk működést, az energiahatékonyságot és a Wi‑Fi vezérlést, valamint interaktív elemekkel segíti a döntést, például zajszint‑demóval és havi költségkalkulátorral. A célcsoportok és a partneri támogatás részletesen szerepelnek, így a site egyértelműen kommunikálja a B2B együttműködés előnyeit, miközben erős bizalmi elemeket is ad véleményekkel, GYIK‑kal és teljes elérhetőségi adatokkal.",
     projectWeatherDesc:
       "Modern, reszponzív időjárás-app városnév vagy geolokáció alapján. OpenWeather API, üveg-hatású felület és dinamikus színátmenet. HTML5, CSS, Bootstrap, vanilla JS.",
     projectPlaylistDesc:
@@ -125,6 +129,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     certEuropass: "Europass - Computer system and application operation technician",
     certDriver: "Vezetői engedély",
     certBoat: "Nemzetközi kedvtelési célú kishajó-vezetői tanúsítvány",
+    certCiscoDevasc: "Cisco DEVASC fejlesztői tanúsítvány",
   },
   en: {
     navPortfolio: "Portfolio",
@@ -166,6 +171,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "A SaaS application that checks Microsoft 365 / Entra tenant security and compliance settings. Users sign in with Microsoft, select relevant standards, then the system audits the tenant, summarizes pass/fail items, details misconfigurations, and shows status and scores on dashboards. I worked on this for 1.5 years at Digitaltechnologies Kft. as lead frontend, supervising and building most of the frontend code.",
     projectDigitecholdDesc:
       "A modern, complex portfolio website for Digitechold Kft. with lots of animations and interactive styling. Built with Next.js 15 (App Router) and TypeScript, combining static marketing pages with dynamic blog content in one codebase. The blog is powered by Sanity CMS, and Sanity Studio is available under /admin.",
+    projectKlimaDesc:
+      "Built for Digital Technologies Kft., this is a B2B HVAC wholesale landing page focused on resellers and installers. It highlights the AEVORIN split AC line, reliable supplier background, bulk ordering options, and fast logistics from stock or container. The page presents the flagship model and key specs, emphasizes quiet operation, energy efficiency, and Wi‑Fi control, and supports decision‑making with interactive elements like a noise‑level demo and monthly cost calculator. It also details target audiences and partner support, and reinforces trust with reviews, FAQs, and full contact information.",
     projectWeatherDesc:
       "Modern, responsive weather app using city name or geolocation. OpenWeather API, glassmorphism UI, and dynamic gradients. HTML5, CSS, Bootstrap, vanilla JS.",
     projectPlaylistDesc:
@@ -194,6 +201,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     certEuropass: "Europass - Computer system and application operation technician",
     certDriver: "Driver license",
     certBoat: "International certificate for operators of pleasure craft",
+    certCiscoDevasc: "Certified Cisco DEVASC developer",
   },
   de: {
     navPortfolio: "Portfolio",
@@ -235,6 +243,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "Eine SaaS-Anwendung zur Prüfung von Microsoft 365 / Entra Tenant-Sicherheits- und Compliance-Einstellungen. Nutzer melden sich mit Microsoft an, wählen relevante Standards, und das System prüft den Tenant, fasst Pass/Fail zusammen, listet Misconfigurations und zeigt Status sowie Scores im Dashboard. Ich war 1,5 Jahre bei Digitaltechnologies Kft. als Lead-Frontend tätig und habe die Frontend-Codebasis betreut und größtenteils entwickelt.",
     projectDigitecholdDesc:
       "Eine moderne, komplexe Portfolio-Website für Digitechold Kft. mit vielen Animationen und interaktiven Stilen. Next.js 15 (App Router) mit TypeScript, das statische Marketingseiten und dynamische Blog-Inhalte in einer Codebasis vereint. Der Blog nutzt Sanity CMS, das Sanity Studio ist unter /admin erreichbar.",
+    projectKlimaDesc:
+      "Eine B2B‑Landingpage fuer den Klima‑Grosshandel von Digital Technologies Kft., die sich an Wiederverkaeufer und Installateure richtet. Sie hebt die AEVORIN Split‑Geraete, den zuverlaessigen Lieferhintergrund, Grossbestellungen und schnelle Logistik ab Lager oder per Container hervor. Die Seite stellt das Hauptmodell und Spezifikationen vor, betont leisen Betrieb, Energieeffizienz und WLAN‑Steuerung und nutzt interaktive Elemente wie eine Lautstaerke‑Demo und einen monatlichen Kostenrechner. Zielgruppen und Partner‑Support sind klar beschrieben, Trust wird durch Reviews, FAQ und vollständige Kontaktdaten aufgebaut.",
     projectWeatherDesc:
       "Moderne, responsive Wetter-App mit Stadtname oder Geolocation. OpenWeather API, Glassmorphism UI und dynamische Verlaeufe. HTML5, CSS, Bootstrap, Vanilla JS.",
     projectPlaylistDesc:
@@ -263,5 +273,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     certEuropass: "Europass - Computer system and application operation technician",
     certDriver: "Fuehrerschein",
     certBoat: "Internationales Zertifikat fuer Freizeitbootfuehrer",
+    certCiscoDevasc: "Zertifizierter Cisco DEVASC Entwickler",
   },
 };

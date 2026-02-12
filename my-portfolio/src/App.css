@@ -1392,6 +1392,182 @@ body.cookie-banner-open .welcome-arrow {
   --chip-hue: 260;
 }
 
+.chip[data-tech="ssrviteexpress"],
+.tech-chip[data-tech="ssrviteexpress"] {
+  --chip-hue: 45;
+}
+
+.chip[data-tech="reactrouter"],
+.tech-chip[data-tech="reactrouter"] {
+  --chip-hue: 5;
+}
+
+.chip[data-tech="reacthelmetasync"],
+.tech-chip[data-tech="reacthelmetasync"] {
+  --chip-hue: 285;
+}
+
+.chip[data-tech="emotion"],
+.tech-chip[data-tech="emotion"] {
+  --chip-hue: 330;
+}
+
+.chip[data-tech="sanityportabletextgroq"],
+.tech-chip[data-tech="sanityportabletextgroq"] {
+  --chip-hue: 5;
+}
+
+.chip[data-tech="msalazure"],
+.tech-chip[data-tech="msalazure"] {
+  --chip-hue: 210;
+}
+
+.chip[data-tech="msalmicrosoftentra"],
+.tech-chip[data-tech="msalmicrosoftentra"] {
+  --chip-hue: 210;
+}
+
+.chip[data-tech="axios"],
+.tech-chip[data-tech="axios"] {
+  --chip-hue: 210;
+}
+
+.chip[data-tech="lucidereact"],
+.tech-chip[data-tech="lucidereact"] {
+  --chip-hue: 220;
+}
+
+.chip[data-tech="googletagmanager"],
+.tech-chip[data-tech="googletagmanager"] {
+  --chip-hue: 25;
+}
+
+.chip[data-tech="googlesearchconsole"],
+.tech-chip[data-tech="googlesearchconsole"] {
+  --chip-hue: 120;
+}
+
+.chip[data-tech="formspree"],
+.tech-chip[data-tech="formspree"] {
+  --chip-hue: 350;
+}
+
+.chip[data-tech="emailoctopus"],
+.tech-chip[data-tech="emailoctopus"] {
+  --chip-hue: 290;
+}
+
+.chip[data-tech="microsoftgraphapi"],
+.tech-chip[data-tech="microsoftgraphapi"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="createreactapp"],
+.tech-chip[data-tech="createreactapp"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="reactbootstrap"],
+.tech-chip[data-tech="reactbootstrap"] {
+  --chip-hue: 260;
+}
+
+.chip[data-tech="chartjs"],
+.tech-chip[data-tech="chartjs"],
+.chip[data-tech="reactchartjs2"],
+.tech-chip[data-tech="reactchartjs2"],
+.chip[data-tech="chartjsplugindatalabels"],
+.tech-chip[data-tech="chartjsplugindatalabels"] {
+  --chip-hue: 350;
+}
+
+.chip[data-tech="reactcircularprogressbar"],
+.tech-chip[data-tech="reactcircularprogressbar"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="reacticons"],
+.tech-chip[data-tech="reacticons"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="muimaterialui"],
+.tech-chip[data-tech="muimaterialui"] {
+  --chip-hue: 265;
+}
+
+.chip[data-tech="nextjs15approuter"],
+.tech-chip[data-tech="nextjs15approuter"] {
+  --chip-hue: 220;
+}
+
+.chip[data-tech="react19"],
+.tech-chip[data-tech="react19"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="gsap"],
+.tech-chip[data-tech="gsap"] {
+  --chip-hue: 95;
+}
+
+.chip[data-tech="framermotion"],
+.tech-chip[data-tech="framermotion"] {
+  --chip-hue: 260;
+}
+
+.chip[data-tech="lenis"],
+.tech-chip[data-tech="lenis"] {
+  --chip-hue: 270;
+}
+
+.chip[data-tech="sanitycmssanitystudiosanityclientnextsanity"],
+.tech-chip[data-tech="sanitycmssanitystudiosanityclientnextsanity"] {
+  --chip-hue: 5;
+}
+
+.chip[data-tech="groq"],
+.tech-chip[data-tech="groq"] {
+  --chip-hue: 5;
+}
+
+.chip[data-tech="portabletextreact"],
+.tech-chip[data-tech="portabletextreact"] {
+  --chip-hue: 5;
+}
+
+.chip[data-tech="reactdom"],
+.tech-chip[data-tech="reactdom"] {
+  --chip-hue: 200;
+}
+
+.chip[data-tech="postcss"],
+.tech-chip[data-tech="postcss"] {
+  --chip-hue: 10;
+}
+
+.chip[data-tech="autoprefixer"],
+.tech-chip[data-tech="autoprefixer"] {
+  --chip-hue: 0;
+}
+
+.chip[data-tech="jspdf"],
+.tech-chip[data-tech="jspdf"],
+.chip[data-tech="jspdfautotable"],
+.tech-chip[data-tech="jspdfautotable"] {
+  --chip-hue: 0;
+}
+
+.chip[data-tech="html2canvas"],
+.tech-chip[data-tech="html2canvas"] {
+  --chip-hue: 120;
+}
+
+.chip[data-tech="eslint"],
+.tech-chip[data-tech="eslint"] {
+  --chip-hue: 255;
+}
+
 .card-shot {
   perspective: 1200px;
   display: flex;
