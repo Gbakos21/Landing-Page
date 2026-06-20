@@ -1111,6 +1111,11 @@ body.cookie-banner-open .welcome-arrow {
   --chip-hue: 200;
 }
 
+.chip[data-tech="reactnative"],
+.tech-chip[data-tech="reactnative"] {
+  --chip-hue: 198;
+}
+
 .chip[data-tech="typescript"],
 .tech-chip[data-tech="typescript"] {
   --chip-hue: 210;
@@ -1176,9 +1181,19 @@ body.cookie-banner-open .welcome-arrow {
   --chip-hue: 30;
 }
 
+.chip[data-tech="postgresql"],
+.tech-chip[data-tech="postgresql"] {
+  --chip-hue: 212;
+}
+
 .chip[data-tech="docker"],
 .tech-chip[data-tech="docker"] {
   --chip-hue: 210;
+}
+
+.chip[data-tech="prismabackend"],
+.tech-chip[data-tech="prismabackend"] {
+  --chip-hue: 255;
 }
 
 .chip[data-tech="sql"],
@@ -1199,6 +1214,16 @@ body.cookie-banner-open .welcome-arrow {
 .chip[data-tech="dotnetcore"],
 .tech-chip[data-tech="dotnetcore"] {
   --chip-hue: 285;
+}
+
+.chip[data-tech="csharp"],
+.tech-chip[data-tech="csharp"] {
+  --chip-hue: 285;
+}
+
+.chip[data-tech="dotnet"],
+.tech-chip[data-tech="dotnet"] {
+  --chip-hue: 270;
 }
 
 .chip[data-tech="websocket"],
@@ -1229,6 +1254,61 @@ body.cookie-banner-open .welcome-arrow {
 .chip[data-tech="phpmyadmin"],
 .tech-chip[data-tech="phpmyadmin"] {
   --chip-hue: 50;
+}
+
+.chip[data-tech="entityframework"],
+.tech-chip[data-tech="entityframework"] {
+  --chip-hue: 265;
+}
+
+.chip[data-tech="swagger"],
+.tech-chip[data-tech="swagger"] {
+  --chip-hue: 120;
+}
+
+.chip[data-tech="signalr"],
+.tech-chip[data-tech="signalr"] {
+  --chip-hue: 205;
+}
+
+.chip[data-tech="natsmessagequeue"],
+.tech-chip[data-tech="natsmessagequeue"] {
+  --chip-hue: 10;
+}
+
+.chip[data-tech="nginxreverseproxy"],
+.tech-chip[data-tech="nginxreverseproxy"] {
+  --chip-hue: 145;
+}
+
+.chip[data-tech="portainer"],
+.tech-chip[data-tech="portainer"] {
+  --chip-hue: 215;
+}
+
+.chip[data-tech="oauth"],
+.tech-chip[data-tech="oauth"] {
+  --chip-hue: 32;
+}
+
+.chip[data-tech="googlelogin"],
+.tech-chip[data-tech="googlelogin"] {
+  --chip-hue: 120;
+}
+
+.chip[data-tech="facebooklogin"],
+.tech-chip[data-tech="facebooklogin"] {
+  --chip-hue: 220;
+}
+
+.chip[data-tech="aiapis"],
+.tech-chip[data-tech="aiapis"] {
+  --chip-hue: 330;
+}
+
+.chip[data-tech="cloudflare"],
+.tech-chip[data-tech="cloudflare"] {
+  --chip-hue: 28;
 }
 
 .chip[data-tech="xtwitter"],
@@ -1302,9 +1382,34 @@ body.cookie-banner-open .welcome-arrow {
   --chip-hue: 35;
 }
 
+.chip[data-tech="payloadcms"],
+.tech-chip[data-tech="payloadcms"] {
+  --chip-hue: 12;
+}
+
+.chip[data-tech="azure"],
+.tech-chip[data-tech="azure"] {
+  --chip-hue: 206;
+}
+
+.chip[data-tech="cicd"],
+.tech-chip[data-tech="cicd"] {
+  --chip-hue: 150;
+}
+
 .chip[data-tech="gtm"],
 .tech-chip[data-tech="gtm"] {
   --chip-hue: 25;
+}
+
+.chip[data-tech="ahrefs"],
+.tech-chip[data-tech="ahrefs"] {
+  --chip-hue: 255;
+}
+
+.chip[data-tech="chatbot"],
+.tech-chip[data-tech="chatbot"] {
+  --chip-hue: 335;
 }
 
 .chip[data-tech="microsoftclarity"],
@@ -1340,6 +1445,16 @@ body.cookie-banner-open .welcome-arrow {
 .chip[data-tech="vite"],
 .tech-chip[data-tech="vite"] {
   --chip-hue: 45;
+}
+
+.chip[data-tech="expogo"],
+.tech-chip[data-tech="expogo"] {
+  --chip-hue: 145;
+}
+
+.chip[data-tech="geminiai"],
+.tech-chip[data-tech="geminiai"] {
+  --chip-hue: 320;
 }
 
 .chip[data-tech="openaichatgptapigpt4o"],
@@ -1574,6 +1689,13 @@ body.cookie-banner-open .welcome-arrow {
   justify-content: center;
 }
 
+.shot-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
 .shot-frame {
   width: min(100%, 420px);
   border-radius: 16px;
@@ -1589,6 +1711,16 @@ body.cookie-banner-open .welcome-arrow {
 .card:hover .shot-frame {
   transform: rotateY(-6deg) rotateX(3deg) translateY(-4px);
   box-shadow: 0 26px 60px rgba(6, 8, 16, 0.4);
+}
+
+.shot-frame.is-secondary {
+  width: min(100%, 360px);
+  transform: rotateY(-4deg) rotateX(2deg) translateX(8px);
+  opacity: 0.95;
+}
+
+.card:hover .shot-frame.is-secondary {
+  transform: rotateY(-2deg) rotateX(1deg) translateX(4px) translateY(-2px);
 }
 
 .shot-bar {
@@ -1816,6 +1948,10 @@ body.cookie-banner-open .welcome-arrow {
   }
 
   .shot-frame {
+    transform: none;
+  }
+
+  .shot-frame.is-secondary {
     transform: none;
   }
 }

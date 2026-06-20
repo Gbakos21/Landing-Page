@@ -85,6 +85,53 @@ const AppContent: React.FC = () => {
           </Reveal>
           <Reveal>
             <ProjectCard
+              title="SmartCV"
+              description={t("projectSmartCvDesc")}
+              href="https://smartcv.gbakos.hu"
+              image="/smartcv-logo.png"
+              tech={[
+                "C#",
+                ".NET",
+                "Identity",
+                "Entity Framework",
+                "React",
+                "TypeScript",
+                "MUI",
+                "Docker",
+                "MySQL",
+                "phpMyAdmin",
+                "Swagger",
+                "SignalR",
+                "NATS message queue",
+                "Nginx reverse proxy",
+                "Portainer",
+                "OAuth",
+                "Google login",
+                "Facebook login",
+                "AI APIs",
+                "Formspree",
+                "Cloudflare",
+              ]}
+              screenshot="/screenshots/smartcv.png"
+            />
+          </Reveal>
+          <Reveal>
+            <ProjectCard
+              title="Workout App"
+              description={t("projectWorkoutDesc")}
+              href="https://workout.gbakos.hu"
+              image="/workout-logo.png"
+              tech={[
+                "React Native",
+                "Prisma backend",
+                "Expo Go",
+                "Gemini AI",
+              ]}
+              screenshot="/screenshots/workout.png"
+            />
+          </Reveal>
+          <Reveal>
+            <ProjectCard
               title="Configcobra"
               description={t("projectConfigcobraDesc")}
               href="https://configcobra.com/"
@@ -162,6 +209,29 @@ const AppContent: React.FC = () => {
                 "ESLint",
               ]}
               screenshot="/screenshots/digitechold.png"
+            />
+          </Reveal>
+          <Reveal>
+            <ProjectCard
+              title="Config As Code"
+              description={t("projectConfigAsCodeDesc")}
+              href="https://configascode.com/"
+              image="/configascode.svg"
+              tech={[
+                "PostgreSQL",
+                "React",
+                "TypeScript",
+                "Payload CMS",
+                "Azure",
+                "CI/CD",
+                "Docker",
+                "GA4",
+                "Microsoft Clarity",
+                "GTM",
+                "Ahrefs",
+                "ChatBot",
+              ]}
+              screenshot="/screenshots/configascode.png"
             />
           </Reveal>
           <Reveal>

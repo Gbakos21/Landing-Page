@@ -30,6 +30,9 @@ export type TranslationKey =
   | "downloadAriaLabel"
   | "projectSmurfDesc"
   | "projectAnalyzerDesc"
+  | "projectSmartCvDesc"
+  | "projectWorkoutDesc"
+  | "projectConfigAsCodeDesc"
   | "projectConfigcobraDesc"
   | "projectConfigcobraAppDesc"
   | "projectDigitecholdDesc"
@@ -93,6 +96,12 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "Egy full-stack miniapp, amely a törpök (Smurfs) adatait jeleníti meg áttekintő statisztikákkal, listákkal és részletes nézetekkel. Frontend: React + TypeScript, Material UI, MUI X chart, React Router; reszponzív felület és dark mode. Backend: ASP.NET Core Web API.",
     projectAnalyzerDesc:
       "Ez a projekt egy webes alkalmazás, amely különböző közösségi platformokról (például Reddit, Google Reviews, X/Twitter, YouTube) származó kommentek automatikus begyűjtését és mesterséges intelligencián alapuló hangulatelemzését végzi. A rendszer a háttérben párhuzamos feldolgozással, üzenetsorok segítségével dolgozza fel a nagy mennyiségű szöveges adatot, majd az eredményeket adatbázisban tárolja és valós időben jeleníti meg egy modern, reszponzív webes felületen grafikonok és statisztikák formájában.",
+    projectSmartCvDesc:
+      "A SmartCV a BME-n készült diplomadolgozatom, egy AI-alapú önéletrajz-elemző és -optimalizáló webalkalmazás. A rendszer felismeri a CV gyenge pontjait, pontszámokkal értékeli a tartalmat, javítási javaslatokat ad, és szükség esetén optimalizált változatot is készít. A felhasználók Google- vagy Facebook-fiókkal is bejelentkezhetnek, miközben több AI-szolgáltatás is beköthető a folyamatba.",
+    projectWorkoutDesc:
+      "Ezt az alkalmazást a BME-n a Design a szoftverfejlesztésben című UX-központú tárgyra készítettem. A Workout App egy edzésnapló és fejlődéskövető rendszer, ahol az edzéseket fel lehet jegyezni, lépésről lépésre végig lehet követni, a vizuális naplóban képeket lehet összehasonlítani, és a fejlődés statisztikái is megjelennek. AI is került bele: edzéstervek generálhatók, az előző edzések alapján ajánlások kérhetők, és ezek elfogadásakor a rendszer módosítja az edzéstervet. Elsődlegesen mobilra optimalizáltam, de desktopon is használható.",
+    projectConfigAsCodeDesc:
+      "Ezt a projektet a Digital Technologies részére készítettem. A cél egy CMS-ből irányítható weboldalrendszer volt, ahol ugyanaz a kódbázis különböző domaineken és adatbázisokkal tud eltérő oldalakat létrehozni a pipeline és build során történő environment‑átírás segítségével. A tartalom és a vizuális megjelenés a CMS-ből vezérelhető, miközben a rendszer automatikusan kezeli a SEO-generálást, a képek optimalizálását, a többnyelvűséget, az e-mail küldést és az értesítéseket. Chatbot is került bele, hogy segítse a látogatókat.",
     projectConfigcobraDesc:
       "Ez a weboldal az app.configcobra SaaS alkalmazás marketing oldala, amelyet a Digitaltechnologies Kft. számára készítettem. A cél az volt, hogy a design szép és letisztult legyen, miközben a lehető legjobb SEO-teljesítményt érje el. Ennek érdekében az eredetileg statikus oldalt SSR-re alakítottam, és több SEO-optimalizáló eszközt használtam, például a beépített Lighthouse-t és az Ahrefs oldalát.",
     projectConfigcobraAppDesc:
@@ -165,6 +174,12 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "A full-stack mini app that shows Smurfs data with overview stats, lists, and detailed views. Frontend: React + TypeScript, Material UI, MUI X charts, React Router; responsive UI and dark mode. Backend: ASP.NET Core Web API.",
     projectAnalyzerDesc:
       "A web app that collects comments from multiple platforms (e.g., Reddit, Google Reviews, X/Twitter, YouTube) and runs AI-based sentiment analysis. The system processes large volumes in parallel using message queues, stores results in a database, and shows them in real time with charts and stats in a modern, responsive UI.",
+    projectSmartCvDesc:
+      "SmartCV is my BME thesis project, an AI-powered web app for resume analysis and optimization. It detects weak points in a CV, scores the content, suggests practical improvements, and can also generate an optimized version when needed. Users can sign in with Google or Facebook, and multiple AI services can be integrated into the workflow.",
+    projectWorkoutDesc:
+      "I built this app at BME for the UX-focused course Design in Software Development. Workout App is a training log and progress tracking system where users can record workouts, follow sessions step by step, compare photos in a visual journal, and review progress statistics. AI is also integrated: it can generate workout plans, suggest adjustments based on previous sessions, and update the training plan when those recommendations are accepted. The app is optimized primarily for mobile, but it also works on desktop.",
+    projectConfigAsCodeDesc:
+      "I built this project for Digital Technologies. The goal was to create a CMS-driven website platform where the same codebase can produce different websites, domains, and databases by rewriting environment settings during the pipeline and build process. Styling and content are controlled from the CMS, while SEO generation, image optimization, multilingual support, email sending, and notifications are handled automatically. A chatbot is also integrated to help visitors.",
     projectConfigcobraDesc:
       "The marketing site for the app.configcobra SaaS product, built for Digitaltechnologies Kft. The goal was a clean, elegant design with the best possible SEO performance. I converted the original static site to SSR and used multiple SEO tools, including built-in Lighthouse audits and Ahrefs.",
     projectConfigcobraAppDesc:
@@ -237,6 +252,12 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "Eine Full-Stack-Mini-App mit Smurf-Daten: Uebersicht, Statistiken, Listen und Detailansichten. Frontend: React + TypeScript, Material UI, MUI X Charts, React Router; responsive UI und Dark Mode. Backend: ASP.NET Core Web API.",
     projectAnalyzerDesc:
       "Eine Web-App, die Kommentare von mehreren Plattformen (z. B. Reddit, Google Reviews, X/Twitter, YouTube) sammelt und KI-basierte Sentiment-Analysen durchfuehrt. Das System verarbeitet grosse Datenmengen parallel ueber Message Queues, speichert Ergebnisse in einer Datenbank und zeigt sie in Echtzeit mit Charts und Statistiken in einer modernen, responsiven UI.",
+    projectSmartCvDesc:
+      "SmartCV ist meine BME-Abschlussarbeit, eine KI-gestuetzte Webanwendung zur Analyse und Optimierung von Lebenslaeufen. Die Plattform erkennt Schwachstellen im CV, bewertet Inhalte mit Punkten, gibt konkrete Verbesserungsvorschlaege und kann bei Bedarf eine optimierte Version erzeugen. Nutzer koennen sich mit Google oder Facebook anmelden, waehrend mehrere KI-Dienste in den Ablauf eingebunden werden koennen.",
+    projectWorkoutDesc:
+      "Diese App habe ich an der BME fuer den UX-orientierten Kurs Design in der Softwareentwicklung erstellt. Workout App ist ein Trainingsprotokoll und Fortschrittstracker, in dem Nutzer Workouts festhalten, Einheiten Schritt fuer Schritt begleiten, Bilder in einem visuellen Journal vergleichen und Entwicklungsstatistiken auswerten koennen. Auch KI wurde integriert: Trainingsplaene koennen generiert werden, auf Basis frueherer Einheiten lassen sich Empfehlungen erzeugen, und nach der Bestaetigung wird der Trainingsplan automatisch angepasst. Die App ist primaer fuer Mobilgeraete optimiert, funktioniert aber auch auf dem Desktop.",
+    projectConfigAsCodeDesc:
+      "Dieses Projekt habe ich fuer Digital Technologies umgesetzt. Ziel war eine CMS-gesteuerte Website-Plattform, bei der dieselbe Codebasis durch das Umschreiben von Environment-Werten waehrend Pipeline und Build verschiedene Websites mit separaten Domains und Datenbanken erzeugen kann. Inhalte und Styling werden aus dem CMS gesteuert, waehrend SEO-Generierung, Bildoptimierung, Mehrsprachigkeit, E-Mail-Versand und Benachrichtigungen automatisch abgedeckt werden. Zusaetzlich wurde ein Chatbot integriert, um Besucher zu unterstuetzen.",
     projectConfigcobraDesc:
       "Die Marketing-Seite für die app.configcobra SaaS-Anwendung, erstellt für Digitaltechnologies Kft. Ziel war ein klares, elegantes Design mit bestmöglicher SEO-Performance. Ich habe die ursprünglich statische Seite auf SSR umgestellt und mehrere SEO-Tools genutzt, darunter Lighthouse und Ahrefs.",
     projectConfigcobraAppDesc:

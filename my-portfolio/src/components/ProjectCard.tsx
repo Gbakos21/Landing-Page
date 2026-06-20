@@ -15,6 +15,7 @@ export type ProjectCardProps = {
   image: string;
   tech?: string[];
   screenshot?: string;
+  screenshots?: string[];
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -28,12 +29,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
   tech = [],
   screenshot,
+  screenshots,
 }) => {
   const rel = targetBlank ? "noopener noreferrer" : undefined;
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [previewIndex, setPreviewIndex] = useState(0);
   const { t } = useI18n();
   const label = actionLabel ?? t("openProject");
   const ariaLabel = actionAriaLabel ?? `${title} ${t("openProjectLabel")}`;
+  const visibleScreenshots = screenshots ?? (screenshot ? [screenshot] : []);
+  const activeScreenshot = visibleScreenshots[previewIndex] ?? visibleScreenshots[0];
+  const hasMultipleScreenshots = visibleScreenshots.length > 1;
 
   useEffect(() => {
     if (!isPreviewOpen) {
@@ -52,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   }, [isPreviewOpen]);
 
   const modal =
-    isPreviewOpen && screenshot && typeof document !== "undefined"
+    isPreviewOpen && activeScreenshot && typeof document !== "undefined"
       ? createPortal(
           <div className="image-modal" role="dialog" aria-modal="true">
             <div
@@ -68,7 +74,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               >
                 x
               </button>
-              <img src={screenshot} alt={`${title} screenshot nagyban`} />
+              <img src={activeScreenshot} alt={`${title} screenshot nagyban`} />
             </div>
           </div>,
           document.body
@@ -119,23 +125,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </a>
         </div>
 
-        {screenshot ? (
+        {visibleScreenshots.length > 0 ? (
           <div className="card-shot">
-            <div className="shot-frame">
-              <div className="shot-bar">
-                <span className="shot-dot is-red" aria-hidden="true" />
-                <span className="shot-dot is-yellow" aria-hidden="true" />
-                <span className="shot-dot is-green" aria-hidden="true" />
-                <span className="shot-pill" aria-hidden="true" />
-              </div>
-              <button
-                className="shot-button"
-                type="button"
-                onClick={() => setIsPreviewOpen(true)}
-                aria-label={`${title} ${t("openImageLabel")}`}
-              >
-                <img src={screenshot} alt={`${title} screenshot`} loading="lazy" />
-              </button>
+            <div className={hasMultipleScreenshots ? "shot-stack" : undefined}>
+              {visibleScreenshots.map((shot, index) => (
+                <div
+                  key={shot}
+                  className={`shot-frame${index > 0 ? " is-secondary" : ""}`}
+                >
+                  <div className="shot-bar">
+                    <span className="shot-dot is-red" aria-hidden="true" />
+                    <span className="shot-dot is-yellow" aria-hidden="true" />
+                    <span className="shot-dot is-green" aria-hidden="true" />
+                    <span className="shot-pill" aria-hidden="true" />
+                  </div>
+                  <button
+                    className="shot-button"
+                    type="button"
+                    onClick={() => {
+                      setPreviewIndex(index);
+                      setIsPreviewOpen(true);
+                    }}
+                    aria-label={`${title} ${t("openImageLabel")}`}
+                  >
+                    <img
+                      src={shot}
+                      alt={`${title} screenshot ${index + 1}`}
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
+              ))}
             </div>
           </div>
         ) : null}
