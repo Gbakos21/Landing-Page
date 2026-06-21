@@ -783,6 +783,25 @@ body.cookie-banner-open .welcome-arrow {
   background: rgba(10, 12, 18, 0.35);
   display: grid;
   gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 10%,
+    rgba(88, 222, 255, 0.12) 30%,
+    rgba(255, 171, 128, 0.12) 50%,
+    transparent 72%
+  );
+  opacity: 0.55;
+  transform: translate3d(-18%, 0, 0);
+  pointer-events: none;
 }
 
 .tech-title {
@@ -809,6 +828,7 @@ body.cookie-banner-open .welcome-arrow {
   font-size: 12px;
   color: var(--text-primary);
   position: relative;
+  overflow: hidden;
 }
 
 .tech-chip::before {
@@ -818,6 +838,23 @@ body.cookie-banner-open .welcome-arrow {
   border-radius: 999px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.35));
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.chip::after,
+.tech-chip::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    115deg,
+    transparent 18%,
+    hsla(var(--chip-hue), 95%, 78%, 0.28) 45%,
+    transparent 72%
+  );
+  opacity: 0;
+  transform: translate3d(-135%, 0, 0);
+  pointer-events: none;
 }
 
 .btn-primary,
@@ -859,6 +896,24 @@ body.cookie-banner-open .welcome-arrow {
   background: rgba(11, 13, 18, 0.45);
   display: grid;
   gap: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.accent-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 14px 0 14px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(88, 222, 255, 0.45),
+    rgba(255, 171, 128, 0.45),
+    transparent
+  );
+  opacity: 0.8;
+  transform-origin: center;
 }
 
 .accent-card.is-alt {
@@ -947,6 +1002,86 @@ body.cookie-banner-open .welcome-arrow {
   box-shadow:
     0 0 6px color-mix(in srgb, var(--dot-color) 65%, transparent 35%),
     0 0 16px color-mix(in srgb, var(--dot-color) 35%, transparent 65%);
+}
+
+@keyframes heroCardGlow {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: translate3d(-18%, 0, 0);
+  }
+
+  50% {
+    opacity: 0.72;
+    transform: translate3d(18%, 0, 0);
+  }
+}
+
+@keyframes heroChipSheen {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translate3d(-135%, 0, 0);
+  }
+
+  28%,
+  46% {
+    opacity: 1;
+  }
+
+  55%,
+  100% {
+    opacity: 0;
+    transform: translate3d(135%, 0, 0);
+  }
+}
+
+@keyframes langDotPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 6px color-mix(in srgb, var(--dot-color) 65%, transparent 35%),
+      0 0 16px color-mix(in srgb, var(--dot-color) 35%, transparent 65%);
+  }
+
+  50% {
+    transform: scale(1.18);
+    box-shadow:
+      0 0 10px color-mix(in srgb, var(--dot-color) 78%, transparent 22%),
+      0 0 22px color-mix(in srgb, var(--dot-color) 45%, transparent 55%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tech-card:hover::after,
+  .tech-card:focus-within::after,
+  .accent-card:hover::after,
+  .accent-card:focus-within::after {
+    animation: heroCardGlow 1.8s ease-in-out 1;
+  }
+
+  .chip:hover::after,
+  .chip:focus-visible::after,
+  .tech-chip:hover::after,
+  .tech-chip:focus-visible::after {
+    animation: heroChipSheen 0.95s ease-out 1;
+  }
+
+  .lang-row:hover .lang-dot.is-on,
+  .lang-row:focus-within .lang-dot.is-on {
+    animation: langDotPulse 1.15s ease-in-out 2;
+    will-change: transform;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-card::after,
+  .chip::after,
+  .tech-chip::after,
+  .lang-dot.is-on {
+    animation: none;
+  }
 }
 
 .accent-card--certs {
@@ -1102,6 +1237,8 @@ body.cookie-banner-open .welcome-arrow {
   background: hsla(var(--chip-hue), 70%, 55%, 0.16);
   color: var(--text-primary);
   transition: border-color 0.2s ease, background 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .theme-light .chip,

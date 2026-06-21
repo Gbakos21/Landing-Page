@@ -6,7 +6,7 @@ const Welcome: React.FC = () => {
   const { t } = useI18n();
   const handleArrowClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    smoothScrollToId("portfolio", 900);
+    smoothScrollToId("portfolio");
   };
 
   return (

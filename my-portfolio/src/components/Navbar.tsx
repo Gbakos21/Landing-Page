@@ -10,25 +10,51 @@ const Navbar: React.FC = () => {
   const [isLightMode, setIsLightMode] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement | null>(null);
+  const isScrolledRef = useRef(false);
+  const activeSectionRef = useRef("portfolio");
   const { language, setLanguage, t } = useI18n();
 
   useEffect(() => {
     let frameId: number | null = null;
 
-    const onScroll = () => {
+    const updateNavigationState = () => {
+      const projects = document.getElementById("projektek");
+      const navHeight =
+        document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 0;
+      const readingLine = window.scrollY + navHeight + window.innerHeight * 0.18;
+      const nextIsScrolled = window.scrollY > 20;
+      const nextActiveSection =
+        projects && readingLine >= projects.offsetTop ? "projektek" : "portfolio";
+
+      if (isScrolledRef.current !== nextIsScrolled) {
+        isScrolledRef.current = nextIsScrolled;
+        setIsScrolled(nextIsScrolled);
+      }
+
+      if (activeSectionRef.current !== nextActiveSection) {
+        activeSectionRef.current = nextActiveSection;
+        setActiveSection(nextActiveSection);
+      }
+    };
+
+    const scheduleUpdate = () => {
       if (frameId !== null) {
         return;
       }
 
       frameId = window.requestAnimationFrame(() => {
-        setIsScrolled(window.scrollY > 20);
+        updateNavigationState();
         frameId = null;
       });
     };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+
+    updateNavigationState();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
       if (frameId !== null) {
         window.cancelAnimationFrame(frameId);
       }
@@ -51,34 +77,6 @@ const Navbar: React.FC = () => {
       localStorage.setItem("theme", "dark");
     }
   }, [isLightMode]);
-
-  useEffect(() => {
-    const sectionIds = ["portfolio", "projektek"];
-    const elements = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => Boolean(el));
-
-    if (!elements.length) {
-      return undefined;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: "-35% 0px -55% 0px",
-        threshold: 0.1,
-      }
-    );
-
-    elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     if (!isLangOpen) {
@@ -116,7 +114,7 @@ const Navbar: React.FC = () => {
     id: string
   ) => {
     event.preventDefault();
-    smoothScrollToId(id, 900);
+    smoothScrollToId(id);
   };
 
   const currentFlag =
