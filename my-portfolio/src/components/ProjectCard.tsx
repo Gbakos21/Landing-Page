@@ -42,6 +42,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const hasMultipleScreenshots = visibleScreenshots.length > 1;
   const getThumbnail = (shot: string) =>
     shot.replace("/screenshots/", "/screenshots/thumbs/").replace(/\.png$/i, ".jpg");
+  const projectUrl = href.startsWith("http")
+    ? href.replace(/^https?:\/\//, "").replace(/\/$/, "")
+    : href;
 
   useEffect(() => {
     if (!isPreviewOpen) {
@@ -53,11 +56,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     document.body.classList.add("no-scroll");
     document.documentElement.classList.add("no-scroll");
 
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsPreviewOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
     return () => {
       document.body.classList.remove("no-scroll");
       document.documentElement.classList.remove("no-scroll");
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isPreviewOpen]);
+
+  const handleClick = () => {
+    if (download) {
+      trackDownload(title, href);
+      return;
+    }
+    trackLinkClick(title, href);
+  };
 
   const modal =
     isPreviewOpen && activeScreenshot && typeof document !== "undefined"
@@ -81,19 +101,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 alt={`${title} screenshot nagyban`}
                 decoding="async"
               />
+              <div className="image-modal__footer">
+                <span className="image-modal__project">{title}</span>
+                <a
+                  className="image-modal__link"
+                  href={href}
+                  target={targetBlank ? "_blank" : undefined}
+                  rel={rel}
+                  download={download ? "" : undefined}
+                  onClick={handleClick}
+                >
+                  <span>{projectUrl}</span>
+                  <span className="link-icon" aria-hidden="true" />
+                </a>
+              </div>
             </div>
           </div>,
           document.body
         )
       : null;
-
-  const handleClick = () => {
-    if (download) {
-      trackDownload(title, href);
-      return;
-    }
-    trackLinkClick(title, href);
-  };
 
   return (
     <article className="card">
@@ -164,6 +190,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         event.currentTarget.src = shot;
                       }}
                     />
+                    <span className="shot-button__hint" aria-hidden="true">
+                      <span className="shot-button__zoom" />
+                      {t("openImageLabel")}
+                    </span>
                   </button>
                 </div>
               ))}
