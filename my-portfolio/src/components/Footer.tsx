@@ -141,7 +141,7 @@ const Footer: React.FC = () => {
         <div className="site-footer__links" aria-label={t("footerLinks")}>
           <a
             className="site-footer__link"
-            href="https://www.linkedin.com/in/gergo-bakos-932189361"
+            href="https://www.linkedin.com/in/gerg%C5%91-bakos-932189361/"
             target="_blank"
             rel="noopener noreferrer"
           >
