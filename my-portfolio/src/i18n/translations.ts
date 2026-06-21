@@ -38,6 +38,16 @@ export type TranslationKey =
   | "projectsEyebrow"
   | "projectsTitle"
   | "projectsLead"
+  | "footerEyebrow"
+  | "footerTitle"
+  | "footerLead"
+  | "footerEmail"
+  | "footerPhone"
+  | "footerLocation"
+  | "footerStudies"
+  | "footerLinks"
+  | "footerLinkedin"
+  | "footerGithub"
   | "welcomeTitle"
   | "welcomeArrow"
   | "openProject"
@@ -123,6 +133,17 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     projectsTitle: "Kiemelt projektek",
     projectsLead:
       "Production appok, diplomamunka, ügyféloldalak és saját termékötletek egy közös portfólióban.",
+    footerEyebrow: "Kapcsolat",
+    footerTitle: "Dolgozzunk együtt egy erős, átgondolt terméken",
+    footerLead:
+      "Ha frontend, full-stack vagy UX-közeli webes projekten dolgozol, szívesen beszélgetek róla. Elérsz e-mailben, telefonon vagy LinkedInen is.",
+    footerEmail: "E-mail",
+    footerPhone: "Telefon",
+    footerLocation: "Helyszín",
+    footerStudies: "Jelenlegi tanulmányok",
+    footerLinks: "Közösségi linkek",
+    footerLinkedin: "LinkedIn",
+    footerGithub: "GitHub",
     welcomeTitle: "Portfolio",
     welcomeArrow: "Ugrás a hero szekcióra",
     openProject: "Megnyitás",
@@ -223,6 +244,17 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     projectsTitle: "Featured projects",
     projectsLead:
       "Production apps, thesis work, client websites, and personal product ideas collected in one portfolio.",
+    footerEyebrow: "Contact",
+    footerTitle: "Let’s build something thoughtful and well-crafted",
+    footerLead:
+      "If you are working on a frontend, full-stack, or UX-driven web product, I’d be happy to talk. You can reach me by email, phone, or LinkedIn.",
+    footerEmail: "Email",
+    footerPhone: "Phone",
+    footerLocation: "Location",
+    footerStudies: "Current studies",
+    footerLinks: "Social links",
+    footerLinkedin: "LinkedIn",
+    footerGithub: "GitHub",
     welcomeTitle: "Portfolio",
     welcomeArrow: "Jump to hero section",
     openProject: "Open",
@@ -323,6 +355,17 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     projectsTitle: "Ausgewaehlte Projekte",
     projectsLead:
       "Produktionsnahe Apps, Abschlussarbeit, Kundenwebsites und eigene Produktideen in einem Portfolio.",
+    footerEyebrow: "Kontakt",
+    footerTitle: "Lass uns gemeinsam ein starkes Produkt bauen",
+    footerLead:
+      "Wenn du an einem Frontend-, Full-Stack- oder UX-nahen Webprojekt arbeitest, spreche ich gern mit dir darueber. Du erreichst mich per E-Mail, Telefon oder LinkedIn.",
+    footerEmail: "E-Mail",
+    footerPhone: "Telefon",
+    footerLocation: "Standort",
+    footerStudies: "Aktuelles Studium",
+    footerLinks: "Soziale Links",
+    footerLinkedin: "LinkedIn",
+    footerGithub: "GitHub",
     welcomeTitle: "Portfolio",
     welcomeArrow: "Zum Hero-Bereich springen",
     openProject: "Oeffnen",

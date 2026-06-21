@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Welcome from "./components/Welcome";
 import Reveal from "./components/Reveal";
+import Footer from "./components/Footer";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import { I18nProvider } from "./i18n/I18nProvider";
@@ -21,40 +22,41 @@ const AppContent: React.FC = () => {
 
       <Navbar />
 
-      <Container maxWidth={false} disableGutters>
-        <Box
-          sx={{
-            px: { xs: 2, md: 6 },
-            pb: 6,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 3,
-          }}
-        >
-          <Welcome />
-          <Reveal>
-            <Hero />
-          </Reveal>
+      <main className="page-content">
+        <Container maxWidth={false} disableGutters>
+          <Box
+            sx={{
+              px: { xs: 2, md: 6 },
+              pb: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 3,
+            }}
+          >
+            <Welcome />
+            <Reveal>
+              <Hero />
+            </Reveal>
 
-          <div id="projektek" className="section-anchor" />
-          <Reveal>
-            <section className="projects-intro" aria-labelledby="projects-title">
-              <p className="projects-intro__eyebrow">{t("projectsEyebrow")}</p>
-              <h2 id="projects-title">{t("projectsTitle")}</h2>
-              <p className="projects-intro__lead">{t("projectsLead")}</p>
-            </section>
-          </Reveal>
-          <Reveal>
-            <ProjectCard
-              title="Smurf village"
-              description={t("projectSmurfDesc")}
-              href="https://smurf.gbakos.hu"
-              image="/smurf.svg"
-              tech={["React", "TypeScript", "MUI", "ASP.NET Core", "REST API"]}
-              screenshot="/screenshots/smurf.png"
-            />
-          </Reveal>
+            <div id="projektek" className="section-anchor" />
+            <Reveal>
+              <section className="projects-intro" aria-labelledby="projects-title">
+                <p className="projects-intro__eyebrow">{t("projectsEyebrow")}</p>
+                <h2 id="projects-title">{t("projectsTitle")}</h2>
+                <p className="projects-intro__lead">{t("projectsLead")}</p>
+              </section>
+            </Reveal>
+            <Reveal>
+              <ProjectCard
+                title="Smurf village"
+                description={t("projectSmurfDesc")}
+                href="https://smurf.gbakos.hu"
+                image="/smurf.svg"
+                tech={["React", "TypeScript", "MUI", "ASP.NET Core", "REST API"]}
+                screenshot="/screenshots/smurf.png"
+              />
+            </Reveal>
           <Reveal>
             <ProjectCard
               title="BME Diplomadolgozat"
@@ -404,8 +406,10 @@ const AppContent: React.FC = () => {
               screenshot="/screenshots/fordito.png"
             />
           </Reveal>
-        </Box>
-      </Container>
+          </Box>
+        </Container>
+      </main>
+      <Footer />
     </div>
   );
 };

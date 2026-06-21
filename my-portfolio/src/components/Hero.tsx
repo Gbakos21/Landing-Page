@@ -41,6 +41,8 @@ const Hero: React.FC = () => {
                 <span className="tech-chip" data-tech={techKey("JavaScript")}>JavaScript</span>
                 <span className="tech-chip" data-tech={techKey("HTML5")}>HTML5</span>
                 <span className="tech-chip" data-tech={techKey("SCSS")}>SCSS</span>
+                <span className="tech-chip" data-tech={techKey("Payload CMS")}>Payload CMS</span>
+                <span className="tech-chip" data-tech={techKey("Sanity CMS")}>Sanity CMS</span>
               </div>
             </div>
             <div className="tech-card">
@@ -53,19 +55,23 @@ const Hero: React.FC = () => {
                 <span className="tech-chip" data-tech={techKey("SQL")}>SQL</span>
                 <span className="tech-chip" data-tech={techKey("Python")}>Python</span>
                 <span className="tech-chip" data-tech={techKey("Docker")}>Docker</span>
+                <span className="tech-chip" data-tech={techKey("NATS message queue")}>NATS message queue</span>
               </div>
             </div>
             <div className="tech-card">
               <span className="tech-title">{t("heroTechOther")}</span>
               <div className="tech-list">
                 <span className="tech-chip" data-tech={techKey("Cisco Networking")}>Cisco Networking</span>
-                <span className="tech-chip" data-tech={techKey("CMS Sanity")}>CMS (Sanity)</span>
                 <span className="tech-chip" data-tech={techKey("SEO")}>SEO</span>
                 <span className="tech-chip" data-tech={techKey("LM Studio")}>LM Studio</span>
                 <span className="tech-chip" data-tech={techKey("Ollama")}>Ollama</span>
                 <span className="tech-chip" data-tech={techKey("GA4")}>GA4</span>
                 <span className="tech-chip" data-tech={techKey("GTM")}>GTM</span>
+                <span className="tech-chip" data-tech={techKey("Ahrefs")}>Ahrefs</span>
                 <span className="tech-chip" data-tech={techKey("Microsoft Clarity")}>Microsoft Clarity</span>
+                <span className="tech-chip" data-tech={techKey("OAuth")}>Social login (OAuth)</span>
+                <span className="tech-chip" data-tech={techKey("Formspree")}>Formspree</span>
+                <span className="tech-chip" data-tech={techKey("ChatBot")}>ChatBot</span>
                 <span className="tech-chip" data-tech={techKey("Linux Server")}>Linux Server</span>
                 <span className="tech-chip" data-tech={techKey("Windows Server")}>Windows Server</span>
                 <span className="tech-chip" data-tech={techKey("VPN")}>VPN</span>
