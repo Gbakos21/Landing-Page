@@ -17,9 +17,12 @@ const Reveal: React.FC<RevealProps> = ({ children, className }) => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
       },
-      { threshold: 0.15, rootMargin: "-10% 0px -20% 0px" }
+      { threshold: 0.05, rootMargin: "160px 0px" }
     );
 
     observer.observe(element);

@@ -40,6 +40,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const visibleScreenshots = screenshots ?? (screenshot ? [screenshot] : []);
   const activeScreenshot = visibleScreenshots[previewIndex] ?? visibleScreenshots[0];
   const hasMultipleScreenshots = visibleScreenshots.length > 1;
+  const getThumbnail = (shot: string) =>
+    shot.replace("/screenshots/", "/screenshots/thumbs/").replace(/\.png$/i, ".jpg");
 
   useEffect(() => {
     if (!isPreviewOpen) {
@@ -74,7 +76,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               >
                 x
               </button>
-              <img src={activeScreenshot} alt={`${title} screenshot nagyban`} />
+              <img
+                src={activeScreenshot}
+                alt={`${title} screenshot nagyban`}
+                decoding="async"
+              />
             </div>
           </div>,
           document.body
@@ -95,7 +101,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="card-main">
           <div className="card-header">
             <div className="card-image">
-              <img src={image} alt={title} />
+              <img src={image} alt={title} loading="lazy" decoding="async" />
             </div>
             <h3>{title}</h3>
           </div>
@@ -149,9 +155,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     aria-label={`${title} ${t("openImageLabel")}`}
                   >
                     <img
-                      src={shot}
+                      src={getThumbnail(shot)}
                       alt={`${title} screenshot ${index + 1}`}
                       loading="lazy"
+                      decoding="async"
+                      onError={(event) => {
+                        event.currentTarget.onerror = null;
+                        event.currentTarget.src = shot;
+                      }}
                     />
                   </button>
                 </div>

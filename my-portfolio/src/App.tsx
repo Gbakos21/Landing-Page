@@ -53,7 +53,7 @@ const AppContent: React.FC = () => {
               title="BME Diplomadolgozat"
               description={t("projectAnalyzerDesc")}
               href="https://analyzer.gbakos.hu"
-              image="/reddit_analyzer.png"
+              image="/logos/reddit_analyzer.png"
               tech={[
                 "React",
                 "TypeScript",
@@ -120,7 +120,7 @@ const AppContent: React.FC = () => {
               title="Workout App"
               description={t("projectWorkoutDesc")}
               href="https://workout.gbakos.hu"
-              image="/workout-logo.png"
+              image="/logos/workout-logo.png"
               tech={[
                 "React Native",
                 "Prisma backend",
@@ -239,7 +239,7 @@ const AppContent: React.FC = () => {
               title="PicParty"
               description={t("projectPicPartyDesc")}
               href="https://picparty.rolandit.hu/"
-              image="/picparty.png"
+              image="/logos/picparty.png"
               tech={[
                 "React Native",
                 "TypeScript",

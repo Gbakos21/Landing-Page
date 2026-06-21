@@ -13,12 +13,26 @@ const Navbar: React.FC = () => {
   const { language, setLanguage, t } = useI18n();
 
   useEffect(() => {
+    let frameId: number | null = null;
+
     const onScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (frameId !== null) {
+        return;
+      }
+
+      frameId = window.requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 20);
+        frameId = null;
+      });
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
+    };
   }, []);
 
   useEffect(() => {

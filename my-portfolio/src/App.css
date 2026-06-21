@@ -17,7 +17,7 @@
   --chip-border: rgba(255, 255, 255, 0.35);
   --overlay-strong: rgba(4, 6, 12, 0.65);
   --overlay-soft: rgba(4, 6, 12, 0.2);
-  --nav-glass: rgba(11, 13, 18, 0.35);
+  --nav-glass: rgba(11, 13, 18, 0.94);
   --nav-border: rgba(255, 255, 255, 0.18);
   --arrow-bg: rgba(255, 255, 255, 0.08);
   --card-media-bg: rgba(10, 12, 18, 0.65);
@@ -42,7 +42,7 @@
   --chip-border: rgba(18, 22, 33, 0.18);
   --overlay-strong: rgba(255, 255, 255, 0.6);
   --overlay-soft: rgba(255, 255, 255, 0.2);
-  --nav-glass: rgba(255, 255, 255, 0.5);
+  --nav-glass: rgba(255, 255, 255, 0.94);
   --nav-border: rgba(18, 22, 33, 0.12);
   --arrow-bg: rgba(18, 22, 33, 0.08);
   --card-media-bg: rgba(18, 22, 33, 0.08);
@@ -70,7 +70,7 @@ body.no-scroll {
   padding-top: var(--nav-height);
 }
 
-/* Animated background layers */
+/* Static background layers avoid full-viewport repaints while scrolling. */
 .bg-aurora,
 .bg-orbs,
 .bg-noise,
@@ -93,8 +93,7 @@ body.no-scroll {
       var(--bg-night) 70%,
       #111a2d 100%
     );
-  filter: blur(18px) saturate(120%);
-  animation: auroraShift 18s ease-in-out infinite;
+  transform: translateZ(0);
 }
 
 .bg-orbs {
@@ -102,15 +101,14 @@ body.no-scroll {
     radial-gradient(520px 520px at 20% 30%, rgba(88, 222, 255, 0.28), transparent 62%),
     radial-gradient(620px 460px at 80% 25%, rgba(255, 171, 128, 0.26), transparent 60%),
     radial-gradient(520px 620px at 45% 85%, rgba(160, 255, 190, 0.22), transparent 62%);
-  mix-blend-mode: screen;
-  animation: orbFloat 26s ease-in-out infinite alternate;
+  opacity: 0.72;
   z-index: -3;
 }
 
 .bg-noise {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.25'/%3E%3C/svg%3E");
   opacity: 0.25;
-  mix-blend-mode: soft-light;
+  opacity: 0.1;
   z-index: -2;
 }
 
@@ -131,30 +129,40 @@ body.no-scroll {
 }
 
 @keyframes auroraShift {
-  0% {
-    transform: translate3d(-2%, -1%, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(2%, 1%, 0) scale(1.05);
-  }
+  0%,
   100% {
     transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(2%, 1%, 0) scale(1.05);
   }
 }
 
 @keyframes orbFloat {
-  0% {
+  0%,
+  100% {
     transform: translate3d(0, 0, 0);
   }
-  100% {
+
+  50% {
     transform: translate3d(3%, -2%, 0);
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (min-width: 901px) and (prefers-reduced-motion: no-preference) {
   .bg-aurora,
   .bg-orbs {
-    animation: none;
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  .bg-aurora {
+    animation: auroraShift 18s ease-in-out infinite;
+  }
+
+  .bg-orbs {
+    animation: orbFloat 26s ease-in-out infinite;
   }
 }
 
@@ -192,14 +200,12 @@ body.no-scroll {
   border-radius: 16px;
   background: transparent;
   border: 1px solid transparent;
-  backdrop-filter: blur(0);
-  transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
 .nav.is-solid {
   background: var(--nav-glass);
   border-color: var(--nav-border);
-  backdrop-filter: blur(10px);
 }
 
 .brand {
@@ -364,7 +370,6 @@ body.no-scroll {
   color: var(--text-primary);
   padding: 6px 12px;
   cursor: pointer;
-  backdrop-filter: blur(10px);
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
@@ -403,7 +408,6 @@ body.no-scroll {
   transform: translateY(-6px);
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  backdrop-filter: blur(12px);
 }
 
 .lang-select.is-open .lang-menu {
@@ -478,7 +482,6 @@ body.no-scroll {
   border-radius: 22px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06));
   border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(12px);
   position: relative;
   overflow: hidden;
 }
@@ -526,7 +529,6 @@ body.no-scroll {
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.14);
-    backdrop-filter: blur(10px);
     position: relative;
   }
 
@@ -613,8 +615,12 @@ body.no-scroll {
   opacity: 0;
   transform: translateY(36px);
   transition: opacity 0.7s ease, transform 0.7s ease;
-  will-change: opacity, transform;
   width: 100%;
+  box-sizing: border-box;
+  padding-top: 6px;
+  margin-top: -6px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 640px;
 }
 
 .reveal.is-visible {
@@ -843,12 +849,10 @@ body.cookie-banner-open .welcome-arrow {
   background: rgba(11, 13, 18, 0.45);
   display: grid;
   gap: 6px;
-  animation: accentFloat 8s ease-in-out infinite;
 }
 
 .accent-card.is-alt {
   background: rgba(255, 255, 255, 0.16);
-  animation-delay: 1.4s;
 }
 
 .accent-title {
@@ -972,16 +976,6 @@ body.cookie-banner-open .welcome-arrow {
   box-shadow: 0 6px 14px rgba(6, 8, 16, 0.25);
   font-size: 16px;
   flex: 0 0 auto;
-}
-
-@keyframes accentFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
 }
 
 .card {
@@ -1863,7 +1857,6 @@ body.cookie-banner-open .welcome-arrow {
   background:
     linear-gradient(135deg, rgba(88, 222, 255, 0.55), rgba(255, 171, 128, 0.55));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   width: fit-content;
   justify-self: start;
