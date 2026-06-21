@@ -776,6 +776,43 @@ body.cookie-banner-open .welcome-arrow {
   gap: 12px;
 }
 
+.projects-intro {
+  width: min(1100px, 96%);
+  margin: 0 auto;
+}
+
+.projects-intro {
+  position: relative;
+  z-index: 1;
+}
+
+.projects-intro__eyebrow {
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.projects-intro h2 {
+  margin: 0;
+  font-size: clamp(34px, 5vw, 56px);
+  font-family: "Fraunces", "Times New Roman", serif;
+}
+
+.projects-intro__lead {
+  margin: 16px auto 0;
+  max-width: 780px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-size: clamp(15px, 1.8vw, 18px);
+}
+
+.projects-intro {
+  padding: 22px 18px 10px;
+  text-align: center;
+}
+
 .tech-card {
   padding: 14px 16px;
   border-radius: 16px;
@@ -2310,5 +2347,11 @@ body.cookie-banner-open .welcome-arrow {
 
   .shot-frame.is-secondary {
     transform: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .projects-intro {
+    padding: 14px 8px 4px;
   }
 }

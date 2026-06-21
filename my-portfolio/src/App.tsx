@@ -39,6 +39,13 @@ const AppContent: React.FC = () => {
 
           <div id="projektek" className="section-anchor" />
           <Reveal>
+            <section className="projects-intro" aria-labelledby="projects-title">
+              <p className="projects-intro__eyebrow">{t("projectsEyebrow")}</p>
+              <h2 id="projects-title">{t("projectsTitle")}</h2>
+              <p className="projects-intro__lead">{t("projectsLead")}</p>
+            </section>
+          </Reveal>
+          <Reveal>
             <ProjectCard
               title="Smurf village"
               description={t("projectSmurfDesc")}

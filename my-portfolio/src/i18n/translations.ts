@@ -20,6 +20,24 @@ export type TranslationKey =
   | "heroAccentFocusTitle"
   | "heroAccentFocusValue"
   | "heroAccentFocusMeta"
+  | "proofEyebrow"
+  | "proofTitle"
+  | "proofLead"
+  | "proofLiveTitle"
+  | "proofLiveValue"
+  | "proofLiveMeta"
+  | "proofStackTitle"
+  | "proofStackValue"
+  | "proofStackMeta"
+  | "proofClientTitle"
+  | "proofClientValue"
+  | "proofClientMeta"
+  | "proofExperienceTitle"
+  | "proofExperienceValue"
+  | "proofExperienceMeta"
+  | "projectsEyebrow"
+  | "projectsTitle"
+  | "projectsLead"
   | "welcomeTitle"
   | "welcomeArrow"
   | "openProject"
@@ -85,6 +103,26 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     heroAccentFocusTitle: "Fókusz",
     heroAccentFocusValue: "Reszponzív UI / UX szemlélet",
     heroAccentFocusMeta: "Gyors, stabil megoldások",
+    proofEyebrow: "Gyors proof",
+    proofTitle: "Valodi projektek, eles tapasztalat",
+    proofLead:
+      "Nem csak gyakorloprojektek: eles webappok, ugyfelmunka, AI-integracio es frontend/backend tapasztalat egy helyen.",
+    proofLiveTitle: "Eles projektek",
+    proofLiveValue: "15+",
+    proofLiveMeta: "publikus demo es production jellegu app",
+    proofStackTitle: "Magabiztos stack",
+    proofStackValue: "React · TypeScript · .NET",
+    proofStackMeta: "frontend, API, CMS es deployment",
+    proofClientTitle: "Projektkornyezet",
+    proofClientValue: "BME · Digital Technologies · Digitechold",
+    proofClientMeta: "egyetemi, ceges es product projektek",
+    proofExperienceTitle: "Tapasztalat",
+    proofExperienceValue: "4-5 ev HTML/CSS · 1+ ev React",
+    proofExperienceMeta: "UX-kozelii, gyors es tiszta feluletek",
+    projectsEyebrow: "Valós munkák",
+    projectsTitle: "Kiemelt projektek",
+    projectsLead:
+      "Production appok, diplomamunka, ügyféloldalak és saját termékötletek egy közös portfólióban.",
     welcomeTitle: "Portfolio",
     welcomeArrow: "Ugrás a hero szekcióra",
     openProject: "Megnyitás",
@@ -165,6 +203,26 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     heroAccentFocusTitle: "Fokus",
     heroAccentFocusValue: "Responsive UI / UX Fokus",
     heroAccentFocusMeta: "Schnelle, stabile Loesungen",
+    proofEyebrow: "Quick proof",
+    proofTitle: "Real projects, real delivery experience",
+    proofLead:
+      "Not just practice work: live web apps, client projects, AI integrations, and hands-on frontend/backend delivery.",
+    proofLiveTitle: "Live projects",
+    proofLiveValue: "15+",
+    proofLiveMeta: "public demos and production-style apps",
+    proofStackTitle: "Confident stack",
+    proofStackValue: "React · TypeScript · .NET",
+    proofStackMeta: "frontend, API, CMS, and deployment",
+    proofClientTitle: "Project context",
+    proofClientValue: "BME · Digital Technologies · Digitechold",
+    proofClientMeta: "academic, client, and product work",
+    proofExperienceTitle: "Experience",
+    proofExperienceValue: "4-5 years HTML/CSS · 1+ year React",
+    proofExperienceMeta: "UX-minded, fast, and clean interfaces",
+    projectsEyebrow: "Selected work",
+    projectsTitle: "Featured projects",
+    projectsLead:
+      "Production apps, thesis work, client websites, and personal product ideas collected in one portfolio.",
     welcomeTitle: "Portfolio",
     welcomeArrow: "Jump to hero section",
     openProject: "Open",
@@ -245,6 +303,26 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     heroAccentFocusTitle: "Focus",
     heroAccentFocusValue: "Responsive UI / UX mindset",
     heroAccentFocusMeta: "Fast, stable solutions",
+    proofEyebrow: "Schneller Nachweis",
+    proofTitle: "Reale Projekte, echte Delivery-Erfahrung",
+    proofLead:
+      "Nicht nur Uebungsarbeiten: Live-Webapps, Kundenprojekte, AI-Integrationen und praktische Frontend/Backend-Erfahrung.",
+    proofLiveTitle: "Live-Projekte",
+    proofLiveValue: "15+",
+    proofLiveMeta: "oeffentliche Demos und produktionsnahe Apps",
+    proofStackTitle: "Sicherer Stack",
+    proofStackValue: "React · TypeScript · .NET",
+    proofStackMeta: "Frontend, API, CMS und Deployment",
+    proofClientTitle: "Projektumfeld",
+    proofClientValue: "BME · Digital Technologies · Digitechold",
+    proofClientMeta: "Hochschule, Kundenarbeit und Produktprojekte",
+    proofExperienceTitle: "Erfahrung",
+    proofExperienceValue: "4-5 Jahre HTML/CSS · 1+ Jahr React",
+    proofExperienceMeta: "UX-orientierte, schnelle und klare Interfaces",
+    projectsEyebrow: "Ausgewaehlte Arbeiten",
+    projectsTitle: "Ausgewaehlte Projekte",
+    projectsLead:
+      "Produktionsnahe Apps, Abschlussarbeit, Kundenwebsites und eigene Produktideen in einem Portfolio.",
     welcomeTitle: "Portfolio",
     welcomeArrow: "Zum Hero-Bereich springen",
     openProject: "Oeffnen",
