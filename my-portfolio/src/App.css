@@ -1196,6 +1196,11 @@ body.cookie-banner-open .welcome-arrow {
   --chip-hue: 255;
 }
 
+.chip[data-tech="keycloak"],
+.tech-chip[data-tech="keycloak"] {
+  --chip-hue: 8;
+}
+
 .chip[data-tech="sql"],
 .tech-chip[data-tech="sql"] {
   --chip-hue: 160;
@@ -1284,6 +1289,11 @@ body.cookie-banner-open .welcome-arrow {
 .chip[data-tech="portainer"],
 .tech-chip[data-tech="portainer"] {
   --chip-hue: 215;
+}
+
+.chip[data-tech="pipeline"],
+.tech-chip[data-tech="pipeline"] {
+  --chip-hue: 165;
 }
 
 .chip[data-tech="oauth"],
@@ -1395,6 +1405,11 @@ body.cookie-banner-open .welcome-arrow {
 .chip[data-tech="cicd"],
 .tech-chip[data-tech="cicd"] {
   --chip-hue: 150;
+}
+
+.chip[data-tech="gitlab"],
+.tech-chip[data-tech="gitlab"] {
+  --chip-hue: 18;
 }
 
 .chip[data-tech="gtm"],

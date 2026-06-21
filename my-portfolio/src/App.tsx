@@ -236,6 +236,27 @@ const AppContent: React.FC = () => {
           </Reveal>
           <Reveal>
             <ProjectCard
+              title="PicParty"
+              description={t("projectPicPartyDesc")}
+              href="https://picparty.rolandit.hu/"
+              image="/picparty.png"
+              tech={[
+                "React Native",
+                "TypeScript",
+                "Prisma backend",
+                "Keycloak",
+                "Docker",
+                "Pipeline",
+                "CI/CD",
+                "Portainer",
+                "Nginx reverse proxy",
+                "GitLab",
+              ]}
+              screenshot="/screenshots/picparty.png"
+            />
+          </Reveal>
+          <Reveal>
+            <ProjectCard
               title="Klíma"
               description={t("projectKlimaDesc")}
               href="https://klima.gbakos.hu"

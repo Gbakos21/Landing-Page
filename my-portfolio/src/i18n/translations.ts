@@ -33,6 +33,7 @@ export type TranslationKey =
   | "projectSmartCvDesc"
   | "projectWorkoutDesc"
   | "projectConfigAsCodeDesc"
+  | "projectPicPartyDesc"
   | "projectConfigcobraDesc"
   | "projectConfigcobraAppDesc"
   | "projectDigitecholdDesc"
@@ -102,6 +103,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "Ezt az alkalmazást a BME-n a Design a szoftverfejlesztésben című UX-központú tárgyra készítettem. A Workout App egy edzésnapló és fejlődéskövető rendszer, ahol az edzéseket fel lehet jegyezni, lépésről lépésre végig lehet követni, a vizuális naplóban képeket lehet összehasonlítani, és a fejlődés statisztikái is megjelennek. AI is került bele: edzéstervek generálhatók, az előző edzések alapján ajánlások kérhetők, és ezek elfogadásakor a rendszer módosítja az edzéstervet. Elsődlegesen mobilra optimalizáltam, de desktopon is használható.",
     projectConfigAsCodeDesc:
       "Ezt a projektet a Digital Technologies részére készítettem. A cél egy CMS-ből irányítható weboldalrendszer volt, ahol ugyanaz a kódbázis különböző domaineken és adatbázisokkal tud eltérő oldalakat létrehozni a pipeline és build során történő environment‑átírás segítségével. A tartalom és a vizuális megjelenés a CMS-ből vezérelhető, miközben a rendszer automatikusan kezeli a SEO-generálást, a képek optimalizálását, a többnyelvűséget, az e-mail küldést és az értesítéseket. Chatbot is került bele, hogy segítse a látogatókat.",
+    projectPicPartyDesc:
+      "Ezt a projektet pár barátommal közösen fejlesztem. A PicParty egy party game baráti társaságoknak: a játékosok feltöltik a saját képeiket, majd a játék során ki kell találni, hogy melyik kép kihez tartozik. Közben pontokat lehet gyűjteni, versenyezni egymással, és az egész élmény kifejezetten közös játékra van kihegyezve.",
     projectConfigcobraDesc:
       "Ez a weboldal az app.configcobra SaaS alkalmazás marketing oldala, amelyet a Digitaltechnologies Kft. számára készítettem. A cél az volt, hogy a design szép és letisztult legyen, miközben a lehető legjobb SEO-teljesítményt érje el. Ennek érdekében az eredetileg statikus oldalt SSR-re alakítottam, és több SEO-optimalizáló eszközt használtam, például a beépített Lighthouse-t és az Ahrefs oldalát.",
     projectConfigcobraAppDesc:
@@ -180,6 +183,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "I built this app at BME for the UX-focused course Design in Software Development. Workout App is a training log and progress tracking system where users can record workouts, follow sessions step by step, compare photos in a visual journal, and review progress statistics. AI is also integrated: it can generate workout plans, suggest adjustments based on previous sessions, and update the training plan when those recommendations are accepted. The app is optimized primarily for mobile, but it also works on desktop.",
     projectConfigAsCodeDesc:
       "I built this project for Digital Technologies. The goal was to create a CMS-driven website platform where the same codebase can produce different websites, domains, and databases by rewriting environment settings during the pipeline and build process. Styling and content are controlled from the CMS, while SEO generation, image optimization, multilingual support, email sending, and notifications are handled automatically. A chatbot is also integrated to help visitors.",
+    projectPicPartyDesc:
+      "I am building this project together with a few friends. PicParty is a party game for friend groups: players upload their own photos, then during the game everyone tries to guess which picture belongs to whom. Along the way users can collect points, compete with each other, and enjoy a playful social experience built around shared memories.",
     projectConfigcobraDesc:
       "The marketing site for the app.configcobra SaaS product, built for Digitaltechnologies Kft. The goal was a clean, elegant design with the best possible SEO performance. I converted the original static site to SSR and used multiple SEO tools, including built-in Lighthouse audits and Ahrefs.",
     projectConfigcobraAppDesc:
@@ -258,6 +263,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "Diese App habe ich an der BME fuer den UX-orientierten Kurs Design in der Softwareentwicklung erstellt. Workout App ist ein Trainingsprotokoll und Fortschrittstracker, in dem Nutzer Workouts festhalten, Einheiten Schritt fuer Schritt begleiten, Bilder in einem visuellen Journal vergleichen und Entwicklungsstatistiken auswerten koennen. Auch KI wurde integriert: Trainingsplaene koennen generiert werden, auf Basis frueherer Einheiten lassen sich Empfehlungen erzeugen, und nach der Bestaetigung wird der Trainingsplan automatisch angepasst. Die App ist primaer fuer Mobilgeraete optimiert, funktioniert aber auch auf dem Desktop.",
     projectConfigAsCodeDesc:
       "Dieses Projekt habe ich fuer Digital Technologies umgesetzt. Ziel war eine CMS-gesteuerte Website-Plattform, bei der dieselbe Codebasis durch das Umschreiben von Environment-Werten waehrend Pipeline und Build verschiedene Websites mit separaten Domains und Datenbanken erzeugen kann. Inhalte und Styling werden aus dem CMS gesteuert, waehrend SEO-Generierung, Bildoptimierung, Mehrsprachigkeit, E-Mail-Versand und Benachrichtigungen automatisch abgedeckt werden. Zusaetzlich wurde ein Chatbot integriert, um Besucher zu unterstuetzen.",
+    projectPicPartyDesc:
+      "Dieses Projekt entwickle ich gemeinsam mit ein paar Freunden. PicParty ist ein Partyspiel fuer Freundesgruppen: Die Spieler laden ihre eigenen Bilder hoch, und waehrend des Spiels muss geraten werden, wem welches Bild gehoert. Dabei sammelt man Punkte, tritt gegeneinander an und erlebt ein lockeres Multiplayer-Spiel rund um gemeinsame Erinnerungen.",
     projectConfigcobraDesc:
       "Die Marketing-Seite für die app.configcobra SaaS-Anwendung, erstellt für Digitaltechnologies Kft. Ziel war ein klares, elegantes Design mit bestmöglicher SEO-Performance. Ich habe die ursprünglich statische Seite auf SSR umgestellt und mehrere SEO-Tools genutzt, darunter Lighthouse und Ahrefs.",
     projectConfigcobraAppDesc:
